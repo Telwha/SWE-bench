@@ -1,0 +1,8 @@
+beautifulsoup4
+chardet
+ghapi
+GitPython
+python-dotenv
+requests
+rich
+transformers>=4.34.0
