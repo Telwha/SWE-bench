@@ -1,0 +1,27 @@
+{
+  "folderName": "make_repo",
+  "folderPath": ".docy/docs/json/collect/make_repo",
+  "url": "/tree/master/.docy/docs/json/collect/make_repo",
+  "files": [
+    {
+      "fileName": "call_make_repo.py",
+      "filePath": "collect/make_repo/call_make_repo.py",
+      "url": "/blob/master/collect/make_repo/call_make_repo.py",
+      "summary": "```mermaid\ngraph TD\n    A[Start] --> B{For each repo in repos}\n    B -->|For each repo| C[Make mirror repo for repo]\n    C --> D{Check if make_repo was successful}\n    D -->|Success| E[Print success message]\n    D -->|Error| F[Print error message]\n    E --> G[End]\n    F --> G\n```",
+      "questions": "",
+      "checksum": "57649720b537c6b198e4a27136b3a83a"
+    },
+    {
+      "fileName": "make_repo.sh",
+      "filePath": "collect/make_repo/make_repo.sh",
+      "url": "/blob/master/collect/make_repo/make_repo.sh",
+      "summary": "```mermaid\ngraph TD\n    A[Start] --> B{Check if target repository exists}\n    B -->|No| C[Exit]\n    B -->|Yes| D[Set organization and repository names]\n    D --> E{Check if new repository already exists}\n    E -->|Yes| F[Inform repository exists, then exit]\n    E -->|No| G[Create mirror repository]\n    G --> H{Check if repository creation was successful}\n    H -->|No| I[Inform failure, then exit]\n    H -->|Yes| J[Inform repository created successfully]\n    J --> K{Check if local repository directory exists}\n    K -->|Yes| L[Inform directory exists, then exit]\n    K -->|No| M[Clone the target repository]\n    M --> N[Perform mirror push of files]\n    N --> O[Remove the target repository directory]\n    O --> P[Clone the mirror repository]\n    P --> Q{Check if .github/workflows exists}\n    Q -->|Yes| R[Remove .github/workflows directory]\n    R --> S[Commit and push changes]\n    Q -->|No| T[Inform .github/workflows does not exist]\n    S --> U[Cleanup cloned mirror repository]\n    T --> U\n    U --> V[End]\n```",
+      "questions": "",
+      "checksum": "1cb4c02321aedbd331913076fd8a4ec2"
+    }
+  ],
+  "folders": [],
+  "summary": "```mermaid\ngraph TD\n    A[Start call_make_repo.py] --> B{For each repo in repos}\n    B -->|For each repo| C[Make mirror repo for repo using make_repo.sh]\n    C --> D{Check if target repository exists}\n    D -->|No| E[Exit make_repo.sh]\n    D -->|Yes| F[Set organization and repository names]\n    F --> G{Check if new repository already exists}\n    G -->|Yes| H[Inform repository exists, then exit make_repo.sh]\n    G -->|No| I[Create mirror repository]\n    I --> J{Check if repository creation was successful}\n    J -->|No| K[Inform failure, then exit make_repo.sh]\n    J -->|Yes| L[Inform repository created successfully]\n    L --> M{Check if local repository directory exists}\n    M -->|Yes| N[Inform directory exists, then exit make_repo.sh]\n    M -->|No| O[Clone the target repository]\n    O --> P[Perform mirror push of files]\n    P --> Q[Remove the target repository directory]\n    Q --> R[Clone the mirror repository]\n    R --> S{Check if .github/workflows exists}\n    S -->|Yes| T[Remove .github/workflows directory]\n    T --> U[Commit and push changes]\n    S -->|No| V[Inform .github/workflows does not exist]\n    U --> W[Cleanup cloned mirror repository]\n    V --> W\n    W --> X[End make_repo.sh]\n    X --> Y{Check if make_repo was successful in call_make_repo.py}\n    Y -->|Success| Z[Print success message]\n    Y -->|Error| AA[Print error message]\n    Z --> AB[End call_make_repo.py]\n    AA --> AB\n```",
+  "questions": "",
+  "checksum": "c65e1f75456b90ae55275ee58759ac4e"
+}

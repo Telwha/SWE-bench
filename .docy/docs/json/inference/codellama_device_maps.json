@@ -1,0 +1,8 @@
+{
+  "fileName": "codellama_device_maps.json",
+  "filePath": "inference/codellama_device_maps.json",
+  "url": "/blob/master/inference/codellama_device_maps.json",
+  "summary": "```mermaid\ngraph TD\n    A[Start] --> B[Initialize Model Components]\n    B --> C{Component Type}\n    C -->|Embed Tokens| D[Embedding Layer]\n    C -->|Model Layers| E[Processing Layers]\n    C -->|Norm| F[Normalization Layer]\n    C -->|LM Head| G[Language Model Head]\n    D --> H[Token Embedding Processing]\n    E --> I[Layer-wise Processing]\n    F --> J[Normalization Processing]\n    G --> K[Language Model Output]\n    I --> L{Layer Activation}\n    L -->|0| M[No Activation]\n    L -->|1| N[Activation Level 1]\n    L -->|2| O[Activation Level 2]\n    L -->|3| P[Activation Level 3]\n    M --> Q[Output to Next Layer/Process]\n    N --> Q\n    O --> Q\n    P --> Q\n    Q --> R{Next Component}\n    R -->|Model Layers| E\n    R -->|Norm| F\n    R -->|LM Head| G\n    R -->|End| S[End of Model Processing]\n```\nThis mermaid diagram represents the flow of processing within a model, starting from initialization, through different types of components (embedding, layers, normalization, and language model head), and detailing how each layer's activation level affects the processing flow.",
+  "questions": "",
+  "checksum": "a2eb26fa0fc94ed2cdf0a8defa0756e1"
+}

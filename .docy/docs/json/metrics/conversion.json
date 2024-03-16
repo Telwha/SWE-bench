@@ -1,0 +1,8 @@
+{
+  "fileName": "conversion.py",
+  "filePath": "metrics/conversion.py",
+  "url": "/blob/master/metrics/conversion.py",
+  "summary": "```mermaid\nflowchart TD\n    A[Start convert_log_to_ground_truth] --> B{Check if log file can be parsed}\n    B -- Yes --> C[Retrieve Instance File Name and Repository]\n    B -- No --> Z[Error: Log file could not be parsed]\n    C --> D[Identify Log Parser based on Repository]\n    D --> E[Extract Before and After Test Status]\n    E --> F{Loop through After Test Status}\n    F -->|Test Passed| G[Test Passed in Before Status]\n    F -->|Test Failed| H[Test Failed in Before Status]\n    G --> I{Was Test Initially Passing?}\n    H --> J{Was Test Initially Failing?}\n    I -- Yes --> K[Add to PASS_TO_PASS]\n    I -- No --> L[Add to FAIL_TO_PASS]\n    J -- Yes --> M[Add to PASS_TO_FAIL]\n    J -- No --> N[Add to FAIL_TO_FAIL]\n    K & L & M & N --> O{Is Save Directory Provided?}\n    O -- Yes --> P[Save Results to File]\n    O -- No --> Q[Return Status Ground Truth]\n    P --> Q[Return Status Ground Truth]\n    Z --> Q[Return Status Ground Truth]\n```\nThis mermaid markdown code illustrates the steps involved in the `convert_log_to_ground_truth` function from the provided code snippet. It starts with checking if the log file can be parsed, then moves through identifying the repository, selecting the appropriate log parser, extracting before and after test statuses, categorizing tests based on their transitions between statuses, and optionally saving the results to a file if a save directory is provided.",
+  "questions": "",
+  "checksum": "2edfdf9fdeeedcddc4a09a49f3cad28d"
+}

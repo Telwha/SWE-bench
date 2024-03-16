@@ -1,0 +1,8 @@
+{
+  "fileName": "modeling_flash_llama.py",
+  "filePath": "inference/llamao/modeling_flash_llama.py",
+  "url": "/blob/master/inference/llamao/modeling_flash_llama.py",
+  "summary": "```mermaid\nflowchart TD\n    A[Start] --> B[Initialize Model Components]\n    B --> C{Is it Training?}\n    C -->|Yes| D[Gradient Checkpointing]\n    C -->|No| E[Process Input Embeddings]\n    E --> F[Unpad Input if Required]\n    F --> G[Iterate Over Decoder Layers]\n    G --> H{Is Output Attention?}\n    H -->|Yes| I[Output Attention Weights]\n    H -->|No| J[No Attention Output]\n    I --> K[Post Layer Operations]\n    J --> K\n    K --> L{Is Output Hidden States?}\n    L -->|Yes| M[Output Hidden States]\n    L -->|No| N[No Hidden States Output]\n    M --> O[Apply Final Layer Norm]\n    N --> O\n    O --> P{Is it Sequence Classification?}\n    P -->|Yes| Q[Apply Classification Head]\n    P -->|No| R{Is it Causal LM?}\n    R -->|Yes| S[Apply LM Head]\n    R -->|No| T[Other Task Processing]\n    Q --> U[End]\n    S --> U\n    T --> U\n```\nThis flowchart represents the general workflow of the code provided, focusing on the initialization of model components, handling of input embeddings, processing through decoder layers, and the application of specific heads based on the task (e.g., sequence classification or causal language modeling). It also highlights conditional paths such as gradient checkpointing during training, outputting attention weights, and hidden states based on configuration flags.",
+  "questions": "",
+  "checksum": "08a7f2980bc080766c0b77557775d1a1"
+}

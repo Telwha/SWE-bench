@@ -1,0 +1,8 @@
+{
+  "fileName": "bm25_retrieval.py",
+  "filePath": "inference/make_datasets/bm25_retrieval.py",
+  "url": "/blob/master/inference/make_datasets/bm25_retrieval.py",
+  "summary": "```mermaid\nflowchart TD\n    A[Start] --> B{Check if dataset path exists}\n    B -- Yes --> C[Load dataset from disk]\n    B -- No --> D[Load dataset from HuggingFace Datasets]\n    C --> E[Prepare dataset splits]\n    D --> E\n    E --> F{Check for unknown splits}\n    F -- Yes --> G[Error: Unknown splits]\n    F -- No --> H[Get remaining instances]\n    H --> I[Get root directory and name]\n    I --> J[Get index paths for instances]\n    J --> K[Search indexes for instances]\n    K --> L[Get missing IDs]\n    L --> M[Cleanup and finish]\n    M --> N[End]\n```\n\nThis flowchart represents the process outlined in the provided code, focusing on the main steps involved in preparing, processing, and cleaning up after searching indexes for instances in a dataset. The process starts with checking if the dataset path exists, leading to either loading the dataset from disk or from HuggingFace Datasets. After preparing the dataset splits, it checks for unknown splits, which could lead to an error. Then, it proceeds to get the remaining instances that need processing, prepares the root directory, retrieves index paths for instances, and performs searches on these indexes. Finally, it identifies any missing IDs, cleans up resources, and finishes the process.",
+  "questions": "",
+  "checksum": "f2d5e1f43580981a726649c04dc2a35b"
+}

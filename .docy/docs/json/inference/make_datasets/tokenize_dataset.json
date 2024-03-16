@@ -1,0 +1,8 @@
+{
+  "fileName": "tokenize_dataset.py",
+  "filePath": "inference/make_datasets/tokenize_dataset.py",
+  "url": "/blob/master/inference/make_datasets/tokenize_dataset.py",
+  "summary": "```mermaid\nflowchart TD\n    A[Start] --> B{Check if tokenizer name provided}\n    B -->|Yes| C[Initialize tokenizer and function]\n    B -->|No| Z[End without tokenizer initialization]\n    C --> D{Check if dataset path exists}\n    D -->|Yes| E[Load dataset from disk]\n    D -->|No| F[Load dataset using name or path]\n    E & F --> G[Filter out superlong instances]\n    G --> H{Is split test?}\n    H -->|No| I[Tokenize non-test split]\n    H -->|Yes| J[Skip tokenizing test split]\n    I --> K{Is num_proc > 0?}\n    K -->|Yes| L[Tokenize with multiprocessing]\n    K -->|No| M[Tokenize without multiprocessing]\n    L & M --> N[Add tokenized columns to dataset]\n    J --> O{Is num_proc > 0?}\n    O -->|Yes| P[Tokenize test split with multiprocessing]\n    O -->|No| Q[Tokenize test split without multiprocessing]\n    P & Q --> R[Add tokenized columns to test dataset]\n    N & R --> S{Is push to hub user specified?}\n    S -->|Yes| T[Push dataset to Hugging Face Hub]\n    S -->|No| U[Save dataset to disk]\n    T & U --> Z[End]\n```",
+  "questions": "",
+  "checksum": "fed2d027705839539fd984bd10274e6d"
+}

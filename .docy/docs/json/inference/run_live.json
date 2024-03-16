@@ -1,0 +1,8 @@
+{
+  "fileName": "run_live.py",
+  "filePath": "inference/run_live.py",
+  "url": "/blob/master/inference/run_live.py",
+  "summary": "```mermaid\nflowchart TD\n    A[Start] --> B{Parse Issue URL}\n    B -->|Valid| C[Get Problem Statement]\n    B -->|Invalid| Z[Error: Invalid URL]\n    C --> D[Clone Repository]\n    D --> E[Build BM25 Retrieval Index]\n    E --> F[Search in Index]\n    F --> G{Include READMEs?}\n    G -->|Yes| H[Get README Files]\n    G -->|No| I[Skip READMEs]\n    H --> J[Ingest Files]\n    I --> J\n    J --> K[Generate Prompt]\n    K --> L[Call Model]\n    L --> M[Extract Diff from Response]\n    M --> N[Extract Minimal Patch]\n    N --> O[Save Output]\n    O --> P[End]\n```\nThis flowchart represents the steps taken by the code to run a live inference session on a GitHub issue. It starts with parsing the issue URL, retrieving the problem statement, cloning the repository, and building a BM25 retrieval index. It then searches the index, decides whether to include README files, ingests files if necessary, and generates a prompt. The model is called with this prompt, and the response is processed to extract a diff and a minimal patch. Finally, the output is saved, and the process ends.",
+  "questions": "",
+  "checksum": "cb87d8322f8e6d2f5b897b798132bc3f"
+}

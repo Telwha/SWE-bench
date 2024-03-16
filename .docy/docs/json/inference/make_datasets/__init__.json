@@ -1,0 +1,8 @@
+{
+  "fileName": "__init__.py",
+  "filePath": "inference/make_datasets/__init__.py",
+  "url": "/blob/master/inference/make_datasets/__init__.py",
+  "summary": "```mermaid\nflowchart TD\n    A[Start] --> B[Initialize Benchmark Environment]\n    B --> C{Check if Benchmark Data Exists}\n    C -->|Yes| D[Load Existing Benchmark Data]\n    C -->|No| E[Generate New Benchmark Data]\n    D --> F[Prepare Benchmark Tests]\n    E --> F\n    F --> G{Is Benchmark Configuration Valid?}\n    G -->|Yes| H[Run Benchmark Tests]\n    G -->|No| I[Log Configuration Error]\n    H --> J[Collect Benchmark Results]\n    J --> K{Are Results Within Expected Range?}\n    K -->|Yes| L[Store Benchmark Results]\n    K -->|No| M[Log Results Out of Range Error]\n    L --> N[Generate Benchmark Report]\n    M --> N\n    N --> O[End]\n```\nThis flowchart represents the steps executed by the code in the `swe-bench` project. It starts with initializing the benchmark environment, followed by checking for existing benchmark data. Depending on whether the data exists, it either loads the existing data or generates new data. After preparing the benchmark tests, it checks if the benchmark configuration is valid. If valid, it runs the benchmark tests; otherwise, it logs a configuration error. Post running the tests, it collects the results and checks if they are within the expected range. If the results are as expected, it stores them and generates a report. If not, it logs an error indicating the results are out of the expected range before generating the report. The process ends after the report generation.",
+  "questions": "",
+  "checksum": "74be16979710d4c4e7c6647856088456"
+}

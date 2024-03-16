@@ -1,0 +1,8 @@
+{
+  "fileName": "remove_envs.py",
+  "filePath": "collect/cleanup/remove_envs.py",
+  "url": "/blob/master/collect/cleanup/remove_envs.py",
+  "summary": "```mermaid\ngraph TD\n    A[Start] --> B{Parse Arguments}\n    B --> C[Get Conda Environments]\n    C --> D{Check Each Environment}\n    D -->|For Each| E[Remove Environment]\n    E --> F[Delete Folders with Prefix]\n    F --> G[End]\n\n    classDef startend fill:#f9f,stroke:#333,stroke-width:4px;\n    classDef operation fill:#bbf,stroke:#f66,stroke-width:2px;\n    classDef condition fill:#fe9,stroke:#333,stroke-width:2px;\n    class A startend;\n    class B,C,F,G operation;\n    class D,E condition;\n```",
+  "questions": "",
+  "checksum": "169b8699354ee73d0468e77dcc68301c"
+}

@@ -1,0 +1,8 @@
+{
+  "fileName": "get_versions_pydicom.py",
+  "filePath": "versioning/extract_web/get_versions_pydicom.py",
+  "url": "/blob/master/versioning/extract_web/get_versions_pydicom.py",
+  "summary": "```mermaid\ngraph TD\n    A[Start] --> B{Get pydicom task instances}\n    B --> C[Fetch pydicom FAQ page]\n    C --> D[Parse HTML for release table]\n    D --> E[Extract release dates and versions]\n    E --> F[Sort releases by date]\n    F --> G{For each task instance}\n    G -->|For each release| H[Check if release date < task creation date]\n    H -->|True| I[Assign version to task]\n    H -->|False| J[Assign oldest version to task]\n    I --> K[Continue to next task]\n    J --> K\n    K --> L{All tasks processed}\n    L -->|True| M[Write updated tasks to file]\n    M --> N[End]\n```\nThis flowchart represents the process of updating pydicom task instances with their corresponding pydicom version based on the task's creation date and the release dates of pydicom versions. It starts by fetching the task instances and the pydicom FAQ page, then parses the release information, and finally updates each task instance with the appropriate version before saving the updated list.",
+  "questions": "",
+  "checksum": "2a54db7d63d594e6a79955d78fdd89d4"
+}

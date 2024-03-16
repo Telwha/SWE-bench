@@ -1,0 +1,8 @@
+{
+  "fileName": "get_versions_xarray.py",
+  "filePath": "versioning/extract_web/get_versions_xarray.py",
+  "url": "/blob/master/versioning/extract_web/get_versions_xarray.py",
+  "summary": "```mermaid\ngraph TD\n    A[Start] --> B[Import Libraries]\n\n    B --> C[Append harness utils to sys.path]\n    C --> D[Get raw xarray dataset instances]\n\n    D --> E[Fetch xarray version info from webpage]\n    E --> F[Extract version and date info using regex]\n    F --> G[Format and sort version-date pairs]\n\n    G --> H[Assign version to each task based on creation date]\n    H --> I[Save versioned xarray task instances to file]\n\n    I --> J[End]\n\n    style A fill:#f9f,stroke:#333,stroke-width:4px\n    style J fill:#f9f,stroke:#333,stroke-width:4px\n```\nThis flowchart represents the sequence of operations performed by the code snippet. It starts with importing necessary libraries and ends with saving the versioned xarray task instances to a file. The process involves fetching and processing version information from the xarray documentation webpage, then assigning the appropriate version to each task based on its creation date before finally saving this enriched dataset.",
+  "questions": "",
+  "checksum": "b39cba33b43e614732bbff78821a92d1"
+}

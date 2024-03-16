@@ -1,0 +1,8 @@
+{
+  "fileName": "get_versions_astropy.py",
+  "filePath": "versioning/extract_web/get_versions_astropy.py",
+  "url": "/blob/master/versioning/extract_web/get_versions_astropy.py",
+  "summary": "```mermaid\ngraph TD\n    A[Start] --> B[Import Dependencies]\n\n    B --> C[Get Raw Astropy Dataset]\n    C --> D[Get Version to Date from Astropy Homepage]\n\n    D --> E[Extract (Date, Version) Pairs]\n    E --> F[Construct (Version, Date) Pairs]\n    F --> G[Group Times by Major/Minor Version]\n    G --> H[Pick Most Recent Time as Version Cut Off Date]\n\n    H --> I[Assign Version to Each Task Instance]\n    I --> J[Construct Map of Versions to Task Instances]\n\n    J --> K[Save Matplotlib Versioned Data to Repository]\n    K --> L[End]\n```",
+  "questions": "",
+  "checksum": "c1ccda7354babc53ab36fe502cc75fc7"
+}

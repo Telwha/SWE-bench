@@ -1,0 +1,8 @@
+{
+  "fileName": "constants.py",
+  "filePath": "versioning/constants.py",
+  "url": "/blob/master/versioning/constants.py",
+  "summary": "```mermaid\ngraph TD\n    A[Start] --> B{For each repository}\n    B --> C[Identify version file paths]\n    B --> D[Identify version regex patterns]\n    C --> E[Map repo to version file paths]\n    D --> F[Map repo to version regex patterns]\n    E --> G[Prepare version file URLs]\n    F --> H[Prepare regex for version extraction]\n    G --> I[Combine URLs with SWE_BENCH_URL_RAW]\n    H --> J[Define version extraction methods]\n    I --> K[Ready for version check]\n    J --> K\n    K --> L[End]\n\n    style A fill:#f9f,stroke:#333,stroke-width:4px\n    style L fill:#f9f,stroke:#333,stroke-width:4px\n```\nThis diagram illustrates the process of mapping repositories to their version file paths and regex patterns for version extraction within the `swe-bench` project. It starts by identifying the necessary file paths and regex patterns for each repository, then maps these to prepare URLs and regex methods for version checking, and finally combines these elements to ready the system for a version check operation.",
+  "questions": "",
+  "checksum": "716641356bf7e42db84c3ea5e3db2bd4"
+}

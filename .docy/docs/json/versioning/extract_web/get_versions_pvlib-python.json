@@ -1,0 +1,8 @@
+{
+  "fileName": "get_versions_pvlib-python.py",
+  "filePath": "versioning/extract_web/get_versions_pvlib-python.py",
+  "url": "/blob/master/versioning/extract_web/get_versions_pvlib-python.py",
+  "summary": "```mermaid\ngraph TD\n    A[Start] --> B(Get raw dataset)\n    B --> C(Get version to date from webpage)\n    C --> D{Iterate through matches}\n    D --> E[Construct (version, date) pairs]\n    E --> F[Group times by major/minor version]\n    F --> G[Pick most recent time as version cut-off date]\n    G --> H{Assign version to each task instance}\n    H --> I[Construct map of versions to task instances]\n    I --> J[Save versioned data to repository]\n    J --> K[End]\n```",
+  "questions": "",
+  "checksum": "c35b34254a4afce7c7564efb717cae39"
+}

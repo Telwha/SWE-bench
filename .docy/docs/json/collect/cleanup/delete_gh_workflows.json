@@ -1,0 +1,8 @@
+{
+  "fileName": "delete_gh_workflows.py",
+  "filePath": "collect/cleanup/delete_gh_workflows.py",
+  "url": "/blob/master/collect/cleanup/delete_gh_workflows.py",
+  "summary": "```mermaid\ngraph TD\n    A[Start] --> B{Parse Arguments}\n    B --> C[Get List of Remote Branches]\n    C --> D[Clone Repo to temp_repo]\n    D --> E{For Each Branch}\n    E -->|For Each| F[Switch to Branch]\n    F --> G{Check .github/workflows Exists}\n    G -->|Exists| H[Delete .github/workflows Folder]\n    H --> I[Add Changes]\n    I --> J[Commit Changes]\n    J --> K[Push Changes]\n    G -->|Does Not Exist| L[Print Folder Not Found]\n    K --> M{More Branches?}\n    L --> M\n    M -->|Yes| F\n    M -->|No| N[Cleanup: Delete temp_repo]\n    N --> O[End]\n```",
+  "questions": "",
+  "checksum": "5613d318aab67d15d1dec02029bc3b08"
+}

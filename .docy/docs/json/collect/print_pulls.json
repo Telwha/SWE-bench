@@ -1,0 +1,8 @@
+{
+  "fileName": "print_pulls.py",
+  "filePath": "collect/print_pulls.py",
+  "url": "/blob/master/collect/print_pulls.py",
+  "summary": "```mermaid\nflowchart TD\n    A[Start] --> B{Is GitHub token provided?}\n    B -- Yes --> C[Use provided token]\n    B -- No --> D[Use GITHUB_TOKEN from environment]\n    C --> E[Create Repo object]\n    D --> E\n    E --> F[Iterate over all pull requests in the repository]\n    F --> G[Extract resolved issues for each pull]\n    G --> H[Convert pull request object to dictionary]\n    H --> I[Log pull request data to output file]\n    I --> J[End]\n```",
+  "questions": "",
+  "checksum": "3fb0785246125dc5b37d7849e57ae4f7"
+}

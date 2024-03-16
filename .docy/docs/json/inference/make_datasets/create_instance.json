@@ -1,0 +1,8 @@
+{
+  "fileName": "create_instance.py",
+  "filePath": "inference/make_datasets/create_instance.py",
+  "url": "/blob/master/inference/make_datasets/create_instance.py",
+  "summary": "```mermaid\ngraph TD\n    A(Start) --> B[Import Libraries and Modules]\n    B --> C[Define Constants and Load External Resources]\n    C --> D[Define Utility Functions]\n    D --> E{Check for File Source}\n    E -->|oracle| F[Ingest Files from Oracle Filenames]\n    E -->|bm25| G[Add Retrieval Results]\n    E -->|all| H[Ingest All Directory Contents]\n    E -->|none| I[Set File Contents to Empty]\n    G --> J[Ingest Files from Retrieval Hits]\n    F --> K[Generate Prompt Based on Style]\n    J --> K\n    H --> K\n    I --> K\n    K --> L[Add Text Inputs to Instances]\n    L --> M[Handle Context Length Limitation]\n    M --> N[Finalize Text Inputs]\n    N --> O[End]\n\n    style A fill:#f9f,stroke:#333,stroke-width:4px\n    style O fill:#f9f,stroke:#333,stroke-width:4px\n```",
+  "questions": "",
+  "checksum": "6fad6e6e19ea4bb02d7f8ed4211f6d0d"
+}

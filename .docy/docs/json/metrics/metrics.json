@@ -1,0 +1,8 @@
+{
+  "fileName": "metrics.py",
+  "filePath": "metrics/metrics.py",
+  "url": "/blob/master/metrics/metrics.py",
+  "summary": "```mermaid\ngraph TD\n    A[Start] --> B[Compute Metrics]\n    B --> C{Is it a single report?}\n    C -->|Yes| D[Compute Single Report Metrics]\n    C -->|No| E[Compute Multiple Reports Metrics]\n    D --> D1[Compute Fail-to-Pass for Single Report]\n    D --> D2[Compute Pass-to-Pass for Single Report]\n    E --> E1{Is it weighted?}\n    E1 -->|Yes| E2[Compute Weighted Metrics]\n    E1 -->|No| E3[Compute Unweighted Metrics]\n    E2 --> E2A[Compute Weighted Fail-to-Pass]\n    E2 --> E2B[Compute Weighted Pass-to-Pass]\n    E3 --> E3A[Compute Unweighted Fail-to-Pass]\n    E3 --> E3B[Compute Unweighted Pass-to-Pass]\n    D1 & D2 & E2A & E2B & E3A & E3B --> F[Get Resolution Status]\n    F --> G{Determine Status}\n    G -->|FULL| H[Resolved Full]\n    G -->|PARTIAL| I[Resolved Partial]\n    G -->|NO| J[Resolved No]\n    H & I & J --> K[End]\n```\nThis mermaid diagram illustrates the flow of operations within the provided code. It starts with the decision of whether the input is a single report or multiple reports, followed by further decisions based on the type of computation (weighted or unweighted for multiple reports) and concludes with determining the resolution status based on the computed metrics.",
+  "questions": "",
+  "checksum": "dcc82eae5835805db49754cbf53da494"
+}

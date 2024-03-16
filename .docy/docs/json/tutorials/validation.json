@@ -1,0 +1,8 @@
+{
+  "fileName": "validation.ipynb",
+  "filePath": "tutorials/validation.ipynb",
+  "url": "/blob/master/tutorials/validation.ipynb",
+  "summary": "```mermaid\nflowchart TD\n    A[Start] --> B{Import Modules}\n    B --> C[Declare Repository and Log Directory]\n    C --> D[Load and Sort Task Instances]\n    D --> E[Monitor Validation]\n    E --> F[Monitor Logs for Same/Different Outputs]\n    F --> G[Convert Logs to Ground Truth for Different Outputs]\n    G --> H[Filter and Prepare Final Task Instances]\n    H --> I[Save Final Task Instances to JSON]\n    I --> J[End]\n    \n    style A fill:#f9f,stroke:#333,stroke-width:4px\n    style J fill:#f9f,stroke:#333,stroke-width:4px\n```\nThis flowchart represents the sequential steps taken by the code in the provided file. Starting with importing necessary modules, it moves through declaring the repository and log directory, loading and sorting task instances, monitoring validation and log outputs, converting logs to ground truth for differing outputs, filtering and preparing final task instances, and finally saving these instances to a JSON file.",
+  "questions": "",
+  "checksum": "8bdc054fc1ab09055dbf8458734bbc3e"
+}

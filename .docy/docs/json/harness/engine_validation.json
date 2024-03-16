@@ -1,0 +1,8 @@
+{
+  "fileName": "engine_validation.py",
+  "filePath": "harness/engine_validation.py",
+  "url": "/blob/master/harness/engine_validation.py",
+  "summary": "```mermaid\ngraph TD\n    A[Start] --> B{Validate Command Line Arguments}\n    B --> C[Load Task Instances]\n    C --> D[Split Task Instances]\n    D --> E{Check Number of Workers}\n    E -->|One Worker| F[Setup Testbed for Single Worker]\n    E -->|Multiple Workers| G[Setup Testbed for Multiple Workers]\n    F --> H[Verify Task Instances Sequentially]\n    G --> I[Verify Task Instances in Parallel]\n    H --> J[End]\n    I --> J\n    F --> K[Create Testbed Context]\n    G --> L[Create Multiple Testbed Contexts]\n    K --> M[Run Tasks Sequentially in Context]\n    L --> N[Run Tasks in Parallel across Contexts]\n    M --> O[Task Environment Setup]\n    N --> O\n    O --> P{Check if Task Instance Should be Skipped}\n    P -->|Yes| Q[Skip Task Instance]\n    P -->|No| R[Reset Task Environment]\n    R --> S[Run Install Task]\n    S --> T[Apply Test Patch]\n    T --> U[Run Tests Task (Test Patch)]\n    U --> V[Apply Gold Patch]\n    V --> W[Run Tests Task (Gold Patch)]\n    Q --> X[Continue to Next Task Instance]\n    W --> X\n    X -->|All Task Instances Processed| J\n```\nThis mermaid diagram illustrates the flow of operations within the provided code, focusing on the validation of command line arguments, the handling of task instances (including their distribution among workers), and the detailed steps taken to verify each task instance within its environment.",
+  "questions": "",
+  "checksum": "551278ec463748561e0eb8a2fc9a6c8b"
+}

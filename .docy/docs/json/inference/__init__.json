@@ -1,0 +1,8 @@
+{
+  "fileName": "__init__.py",
+  "filePath": "inference/__init__.py",
+  "url": "/blob/master/inference/__init__.py",
+  "summary": "```markdown\n```mermaid\ngraph TD\n    A[Start] --> B[Initialize swe-bench Environment]\n    B --> C{Check if Data Exists}\n    C -->|Yes| D[Load Existing Data]\n    C -->|No| E[Create New Data]\n    D --> F[Process Data]\n    E --> F\n    F --> G{Is Processing Complete?}\n    G -->|Yes| H[Save Processed Data]\n    G -->|No| F\n    H --> I[Generate Reports]\n    I --> J[End]\n```\n```",
+  "questions": "",
+  "checksum": "74be16979710d4c4e7c6647856088456"
+}

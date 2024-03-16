@@ -1,0 +1,8 @@
+{
+  "fileName": "run_llama.py",
+  "filePath": "inference/run_llama.py",
+  "url": "/blob/master/inference/run_llama.py",
+  "summary": "```mermaid\nflowchart TD\n    A[Start] --> B{Check Shard Info}\n    B -->|Valid| C[Load PEFT Config]\n    B -->|Invalid| D[Error: Shard Info Mismatch]\n    C --> E[Construct Output File Path]\n    E --> F[Load Model]\n    F --> G[Load Tokenizer]\n    G --> H[Get All Existing IDs]\n    H --> I[Load and Preprocess Data]\n    I --> J[Generate Patches]\n    J --> K[End]\n\n    click B \"Check if shard_id and num_shards are specified correctly.\"\n    click C \"Load PEFT configuration if peft_path is provided.\"\n    click E \"Construct the output file path based on parameters.\"\n    click F \"Load the model with or without PEFT adapters.\"\n    click G \"Load the tokenizer for the model.\"\n    click H \"Get all existing instance IDs from the output file to avoid duplicates.\"\n    click I \"Load the dataset, tokenize, filter, and shard it.\"\n    click J \"Generate patches for the dataset using the model.\"\n```",
+  "questions": "",
+  "checksum": "265036d2d26fc474cea0117d936ead5a"
+}

@@ -1,0 +1,8 @@
+{
+  "fileName": "make_repo.sh",
+  "filePath": "collect/make_repo/make_repo.sh",
+  "url": "/blob/master/collect/make_repo/make_repo.sh",
+  "summary": "```mermaid\ngraph TD\n    A[Start] --> B{Check if target repository exists}\n    B -->|No| C[Exit]\n    B -->|Yes| D[Set organization and repository names]\n    D --> E{Check if new repository already exists}\n    E -->|Yes| F[Inform repository exists, then exit]\n    E -->|No| G[Create mirror repository]\n    G --> H{Check if repository creation was successful}\n    H -->|No| I[Inform failure, then exit]\n    H -->|Yes| J[Inform repository created successfully]\n    J --> K{Check if local repository directory exists}\n    K -->|Yes| L[Inform directory exists, then exit]\n    K -->|No| M[Clone the target repository]\n    M --> N[Perform mirror push of files]\n    N --> O[Remove the target repository directory]\n    O --> P[Clone the mirror repository]\n    P --> Q{Check if .github/workflows exists}\n    Q -->|Yes| R[Remove .github/workflows directory]\n    R --> S[Commit and push changes]\n    Q -->|No| T[Inform .github/workflows does not exist]\n    S --> U[Cleanup cloned mirror repository]\n    T --> U\n    U --> V[End]\n```",
+  "questions": "",
+  "checksum": "1cb4c02321aedbd331913076fd8a4ec2"
+}

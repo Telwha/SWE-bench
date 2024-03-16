@@ -1,0 +1,27 @@
+{
+  "folderName": "cleanup",
+  "folderPath": ".docy/docs/json/collect/cleanup",
+  "url": "/tree/master/.docy/docs/json/collect/cleanup",
+  "files": [
+    {
+      "fileName": "delete_gh_workflows.py",
+      "filePath": "collect/cleanup/delete_gh_workflows.py",
+      "url": "/blob/master/collect/cleanup/delete_gh_workflows.py",
+      "summary": "```mermaid\ngraph TD\n    A[Start] --> B{Parse Arguments}\n    B --> C[Get List of Remote Branches]\n    C --> D[Clone Repo to temp_repo]\n    D --> E{For Each Branch}\n    E -->|For Each| F[Switch to Branch]\n    F --> G{Check .github/workflows Exists}\n    G -->|Exists| H[Delete .github/workflows Folder]\n    H --> I[Add Changes]\n    I --> J[Commit Changes]\n    J --> K[Push Changes]\n    G -->|Does Not Exist| L[Print Folder Not Found]\n    K --> M{More Branches?}\n    L --> M\n    M -->|Yes| F\n    M -->|No| N[Cleanup: Delete temp_repo]\n    N --> O[End]\n```",
+      "questions": "",
+      "checksum": "5613d318aab67d15d1dec02029bc3b08"
+    },
+    {
+      "fileName": "remove_envs.py",
+      "filePath": "collect/cleanup/remove_envs.py",
+      "url": "/blob/master/collect/cleanup/remove_envs.py",
+      "summary": "```mermaid\ngraph TD\n    A[Start] --> B{Parse Arguments}\n    B --> C[Get Conda Environments]\n    C --> D{Check Each Environment}\n    D -->|For Each| E[Remove Environment]\n    E --> F[Delete Folders with Prefix]\n    F --> G[End]\n\n    classDef startend fill:#f9f,stroke:#333,stroke-width:4px;\n    classDef operation fill:#bbf,stroke:#f66,stroke-width:2px;\n    classDef condition fill:#fe9,stroke:#333,stroke-width:2px;\n    class A startend;\n    class B,C,F,G operation;\n    class D,E condition;\n```",
+      "questions": "",
+      "checksum": "169b8699354ee73d0468e77dcc68301c"
+    }
+  ],
+  "folders": [],
+  "summary": "```mermaid\ngraph TD\n    subgraph delete_gh_workflows\n        A[Start] --> B{Parse Arguments}\n        B --> C[Get List of Remote Branches]\n        C --> D[Clone Repo to temp_repo]\n        D --> E{For Each Branch}\n        E -->|For Each| F[Switch to Branch]\n        F --> G{Check .github/workflows Exists}\n        G -->|Exists| H[Delete .github/workflows Folder]\n        H --> I[Add Changes]\n        I --> J[Commit Changes]\n        J --> K[Push Changes]\n        G -->|Does Not Exist| L[Print Folder Not Found]\n        K --> M{More Branches?}\n        L --> M\n        M -->|Yes| F\n        M -->|No| N[Cleanup: Delete temp_repo]\n        N --> O[End]\n    end\n\n    subgraph remove_envs\n        P[Start] --> Q{Parse Arguments}\n        Q --> R[Get Conda Environments]\n        R --> S{Check Each Environment}\n        S -->|For Each| T[Remove Environment]\n        T --> U[Delete Folders with Prefix]\n        U --> V[End]\n    end\n\n    style delete_gh_workflows fill:#f9f,stroke:#333,stroke-width:2px\n    style remove_envs fill:#bbf,stroke:#f66,stroke-width:2px\n\n    %% Connections between subgraphs to illustrate potential workflow or dependencies\n    %% Assuming these scripts might be part of a larger cleanup or setup process\n    V --> A : \"Subsequent Cleanup\"\n    O --> P : \"Preceding Task\"\n```",
+  "questions": "",
+  "checksum": "7443a376a91c2fb27fd0d8b4248e5b31"
+}

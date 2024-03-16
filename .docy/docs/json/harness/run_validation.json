@@ -1,0 +1,8 @@
+{
+  "fileName": "run_validation.sh",
+  "filePath": "harness/run_validation.sh",
+  "url": "/blob/master/harness/run_validation.sh",
+  "summary": "```mermaid\ngraph TD\n    A[Start engine_validation.py] --> B{Check if instances_path, log_dir, and temp_dir are provided}\n    B -->|Yes| C[Initialize with provided paths]\n    B -->|No| Z[Exit with error: Paths not provided]\n    C --> D{Check if num_workers is provided}\n    D -->|Yes| E[Set number of workers]\n    D -->|No| F[Use default number of workers]\n    E --> G[Start validation process]\n    F --> G\n    G --> H{Is verbose mode on?}\n    H -->|Yes| I[Run in verbose mode: Show detailed logs]\n    H -->|No| J[Run in silent mode: Show minimal logs]\n    I --> K[Perform validation on task instances]\n    J --> K\n    K --> L{Validation Complete}\n    L --> M[Generate and save logs to log_dir]\n    L --> N[Temporary files saved to temp_dir]\n    M --> O[End of engine_validation.py]\n    N --> O\n```\nThis flowchart represents the steps executed by the `engine_validation.py` script within the context of its operational environment, focusing on the initialization, configuration, and execution phases, including error handling and output management.",
+  "questions": "",
+  "checksum": "b5853d9316c54cfed4b78577dfc59a53"
+}

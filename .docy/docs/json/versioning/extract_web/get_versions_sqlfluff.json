@@ -1,0 +1,8 @@
+{
+  "fileName": "get_versions_sqlfluff.py",
+  "filePath": "versioning/extract_web/get_versions_sqlfluff.py",
+  "url": "/blob/master/versioning/extract_web/get_versions_sqlfluff.py",
+  "summary": "```mermaid\ngraph TD\n    A[Start] --> B{Get raw sqlfluff dataset}\n    B --> C[Get all GitHub releases]\n    C --> D[Extract version and date from releases]\n    D --> E[Collect version/date pairs]\n    E --> F[Sort version/date pairs]\n    F --> G[Iterate through data_tasks]\n    G --> H[Assign versions to tasks]\n    H --> I[Save versioned data to repository]\n    I --> J[Print all versions]\n    J --> K[End]\n    \n    style A fill:#f9f,stroke:#333,stroke-width:4px\n    style K fill:#f9f,stroke:#333,stroke-width:4px\n```",
+  "questions": "",
+  "checksum": "4780a6abd0d0ed3435a027a619de1569"
+}

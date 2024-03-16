@@ -1,0 +1,8 @@
+{
+  "fileName": "run_get_versions.sh",
+  "filePath": "versioning/run_get_versions.sh",
+  "url": "/blob/master/versioning/run_get_versions.sh",
+  "summary": "```mermaid\ngraph TD\n    A[Start] --> B{Determine Retrieval Method}\n\n    B -->|build| C[Setup Conda Environment]\n    B -->|github| D[Setup GitHub Retrieval]\n\n    C --> E[Build Task Instances Locally]\n    D --> F[Retrieve Task Instances from GitHub]\n\n    E --> G[Specify Number of Threads for Building]\n    F --> H[Specify Number of Workers for Retrieval]\n\n    G --> I[Define Path to Conda Installation]\n    H --> J[Define Output Directory for Saved Instances]\n\n    I --> K[Execute Local Building Process]\n    J --> L[Execute GitHub Retrieval Process]\n\n    K --> M[End]\n    L --> M\n```\nThis mermaid diagram illustrates the steps involved in the `get_versions.py` script from the `swe-bench` project, focusing on the process of retrieving versions of task instances either by building them locally or fetching them from GitHub, based on the specified retrieval method.",
+  "questions": "",
+  "checksum": "b88dc95619a766b376132a156c3d7b40"
+}

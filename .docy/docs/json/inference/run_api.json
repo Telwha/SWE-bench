@@ -1,0 +1,8 @@
+{
+  "fileName": "run_api.py",
+  "filePath": "inference/run_api.py",
+  "url": "/blob/master/inference/run_api.py",
+  "summary": "```mermaid\nflowchart TD\n    A[Start] --> B{Check Model Prefix}\n    B -->|claude| C[Anthropic Inference]\n    B -->|gpt| D[OpenAI Inference]\n    C --> E[Load Dataset]\n    D --> E\n    E --> F{Filter Dataset}\n    F -->|Existing IDs| G[Filter out existing IDs]\n    F -->|Shard Info| H[Select Shard]\n    G --> H\n    H --> I[Inference Loop]\n    I --> J{Check Max Cost}\n    J -->|Reached| K[Exit]\n    J -->|Not Reached| I\n    K --> L[End]\n```\n\nThis flowchart represents the high-level logic of the provided code. The process starts with determining the model prefix to decide whether to use the Anthropic or OpenAI inference path. After loading and optionally filtering the dataset based on existing IDs and shard information, it enters an inference loop. Within this loop, it checks if the maximum cost has been reached after each inference call. If the max cost is reached, the process exits; otherwise, it continues with the next inference call until completion.",
+  "questions": "",
+  "checksum": "ca18f1d1f48bde28825453b787153850"
+}

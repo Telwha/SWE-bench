@@ -1,0 +1,8 @@
+{
+  "fileName": "call_make_repo.py",
+  "filePath": "collect/make_repo/call_make_repo.py",
+  "url": "/blob/master/collect/make_repo/call_make_repo.py",
+  "summary": "```mermaid\ngraph TD\n    A[Start] --> B{For each repo in repos}\n    B -->|For each repo| C[Make mirror repo for repo]\n    C --> D{Check if make_repo was successful}\n    D -->|Success| E[Print success message]\n    D -->|Error| F[Print error message]\n    E --> G[End]\n    F --> G\n```",
+  "questions": "",
+  "checksum": "57649720b537c6b198e4a27136b3a83a"
+}

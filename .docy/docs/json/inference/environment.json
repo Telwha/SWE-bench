@@ -1,0 +1,8 @@
+{
+  "fileName": "environment.yml",
+  "filePath": "inference/environment.yml",
+  "url": "/blob/master/inference/environment.yml",
+  "summary": "```mermaid\ngraph TD\n    A[Start] --> B[Define Channels]\n    B --> C[Define Dependencies]\n    C --> D[Base Environment Dependencies]\n    D --> E[Python and Core Libraries]\n    E --> F[Development Tools]\n    F --> G[Define pip Dependencies]\n    G --> H[Core Python Libraries]\n    H --> I[Data Processing and AI Libraries]\n    I --> J[Web and Networking Libraries]\n    J --> K[Development and Debugging Tools]\n    K --> L[End]\n\n    style A fill:#f9f,stroke:#333,stroke-width:4px\n    style L fill:#f9f,stroke:#333,stroke-width:4px\n```",
+  "questions": "",
+  "checksum": "07fb322484f3d9c3786e8a399da0569c"
+}

@@ -1,0 +1,106 @@
+{
+  "folderName": "collect",
+  "folderPath": ".docy/docs/json/collect",
+  "url": "/tree/master/.docy/docs/json/collect",
+  "files": [
+    {
+      "fileName": "get_tasks_pipeline.py",
+      "filePath": "collect/get_tasks_pipeline.py",
+      "url": "/blob/master/collect/get_tasks_pipeline.py",
+      "summary": "```mermaid\ngraph TD\n    A[Start] --> B{Load Environment Variables}\n    B --> C[Parse Command Line Arguments]\n    C --> D[Split Repositories Among Tokens]\n    D --> E[Construct Data Files for Each Token]\n    E --> F{Check if PR Data Exists}\n    F -->|Yes| G[Skip PR Data Retrieval]\n    F -->|No| H[Retrieve PR Data]\n    H --> I{Check if Task Data Exists}\n    I -->|Yes| J[Skip Task Data Creation]\n    I -->|No| K[Create Task Data]\n    K --> L[End]\n    G --> L\n    J --> L\n```",
+      "questions": "",
+      "checksum": "cf2eda30b85064942f5bbb5cfcd2b98b"
+    },
+    {
+      "fileName": "get_top_pypi.py",
+      "filePath": "collect/get_top_pypi.py",
+      "url": "/blob/master/collect/get_top_pypi.py",
+      "summary": "```mermaid\nflowchart TD\n    A[Start selenium driver] --> B[Open top 5000 pypi page]\n    B --> C[Click to show top 5000 packages]\n    C --> D[Retrieve HTML for packages]\n    D --> E[Extract package details from HTML]\n    E --> F{Check if package URL exists in file}\n    F -->|Yes| G[Continue to next package]\n    F -->|No| H[Get package GitHub URL]\n    H --> I{GitHub URL found?}\n    I -->|Yes| J[Fetch stars and pulls from GitHub API]\n    I -->|No| K[Skip GitHub data]\n    J --> L[Write package data to file]\n    K --> L\n    G --> M[End of package list?]\n    L --> M\n    M -->|Yes| N[End]\n    M -->|No| E\n```\nThis flowchart represents the process of extracting package statistics from a top 5000 PyPI packages page, enriching the data with GitHub statistics, and writing the results to a file. The process starts with initializing a Selenium driver to navigate the web page, clicking to reveal the top 5000 packages, and then parsing the HTML to extract package details. For each package, it checks if the URL already exists in the output file to avoid duplicates. If not, it attempts to find the package's GitHub URL from the package's PyPI page. If a GitHub URL is found, it fetches star and pull request counts using the GitHub API. Finally, it writes the package data, including GitHub statistics if available, to a file, iterating through all packages in the list.",
+      "questions": "",
+      "checksum": "e7396ded806275391c587069ba691ffb"
+    },
+    {
+      "fileName": "print_pulls.py",
+      "filePath": "collect/print_pulls.py",
+      "url": "/blob/master/collect/print_pulls.py",
+      "summary": "```mermaid\nflowchart TD\n    A[Start] --> B{Is GitHub token provided?}\n    B -- Yes --> C[Use provided token]\n    B -- No --> D[Use GITHUB_TOKEN from environment]\n    C --> E[Create Repo object]\n    D --> E\n    E --> F[Iterate over all pull requests in the repository]\n    F --> G[Extract resolved issues for each pull]\n    G --> H[Convert pull request object to dictionary]\n    H --> I[Log pull request data to output file]\n    I --> J[End]\n```",
+      "questions": "",
+      "checksum": "3fb0785246125dc5b37d7849e57ae4f7"
+    },
+    {
+      "fileName": "run_get_tasks_pipeline.sh",
+      "filePath": "collect/run_get_tasks_pipeline.sh",
+      "url": "/blob/master/collect/run_get_tasks_pipeline.sh",
+      "summary": "```mermaid\ngraph TD\n    A[Start] --> B{Check for .env file}\n    B -->|Exists| C[Use GITHUB_TOKENS from .env]\n    B -->|Does not exist| D[Proceed without GITHUB_TOKENS]\n    C --> E[Set up parallelization with tokens]\n    D --> E\n    E --> F[Run get_tasks_pipeline.py script]\n    F --> G[Specify repositories to analyze]\n    G -->|scikit-learn/scikit-learn| H[Fetch PRs for scikit-learn]\n    G -->|pallets/flask| I[Fetch PRs for Flask]\n    H --> J[Save PRs to specified path]\n    I --> J\n    J --> K[Save tasks to specified path]\n    K --> L[End]\n```",
+      "questions": "",
+      "checksum": "45c8358a9c359f4b0c9ad22194553572"
+    },
+    {
+      "fileName": "utils.py",
+      "filePath": "collect/utils.py",
+      "url": "/blob/master/collect/utils.py",
+      "summary": "```mermaid\ngraph TD\n    A[Start] --> B{Repo Initialization}\n    B --> C[API Call Wrapper with Rate Limit Handling]\n    C -->|API Call Success| D[Extract Resolved Issues]\n    C -->|Rate Limit Exceeded| E[Wait and Retry]\n    C -->|Resource Not Found| F[Return None]\n    D --> G[Get All Loop for Paginated API Endpoints]\n    G --> H[Get All Issues]\n    G --> I[Get All Pulls]\n    H --> J[Extract Problem Statement and Hints]\n    I --> K[Extract Patches]\n    J --> L[Extract Hints from Comments]\n    K --> M[Convert Diff to Patch Format]\n    L --> N[End]\n    M --> N\n```\nThis flowchart represents the sequence of operations performed by the code in the `swe-bench` project. It starts with the initialization of a `Repo` object, which involves making an API call. If the API call is successful, the process moves to extracting resolved issues from pull requests. If the rate limit is exceeded during any API call, the system waits and retries. If a resource is not found, it returns `None`.\n\nThe `get_all_loop` method is used for retrieving all items from paginated API endpoints, which is a crucial step for both getting all issues and all pull requests from the repository. These issues and pull requests are then used to extract problem statements, hints, and patches. Hints are extracted from comments associated with a pull request before the first commit, and patches are generated by converting the diff obtained from a pull request into a patch format, excluding specific metadata and categorizing changes into either test or general changes. The process ends after extracting hints and patches.",
+      "questions": "",
+      "checksum": "83d083d7d4f86e45bdbe3585d0051514"
+    }
+  ],
+  "folders": [
+    {
+      "folderName": "cleanup",
+      "folderPath": ".docy/docs/json/collect/cleanup",
+      "url": "/tree/master/.docy/docs/json/collect/cleanup",
+      "files": [
+        {
+          "fileName": "delete_gh_workflows.py",
+          "filePath": "collect/cleanup/delete_gh_workflows.py",
+          "url": "/blob/master/collect/cleanup/delete_gh_workflows.py",
+          "summary": "```mermaid\ngraph TD\n    A[Start] --> B{Parse Arguments}\n    B --> C[Get List of Remote Branches]\n    C --> D[Clone Repo to temp_repo]\n    D --> E{For Each Branch}\n    E -->|For Each| F[Switch to Branch]\n    F --> G{Check .github/workflows Exists}\n    G -->|Exists| H[Delete .github/workflows Folder]\n    H --> I[Add Changes]\n    I --> J[Commit Changes]\n    J --> K[Push Changes]\n    G -->|Does Not Exist| L[Print Folder Not Found]\n    K --> M{More Branches?}\n    L --> M\n    M -->|Yes| F\n    M -->|No| N[Cleanup: Delete temp_repo]\n    N --> O[End]\n```",
+          "questions": "",
+          "checksum": "5613d318aab67d15d1dec02029bc3b08"
+        },
+        {
+          "fileName": "remove_envs.py",
+          "filePath": "collect/cleanup/remove_envs.py",
+          "url": "/blob/master/collect/cleanup/remove_envs.py",
+          "summary": "```mermaid\ngraph TD\n    A[Start] --> B{Parse Arguments}\n    B --> C[Get Conda Environments]\n    C --> D{Check Each Environment}\n    D -->|For Each| E[Remove Environment]\n    E --> F[Delete Folders with Prefix]\n    F --> G[End]\n\n    classDef startend fill:#f9f,stroke:#333,stroke-width:4px;\n    classDef operation fill:#bbf,stroke:#f66,stroke-width:2px;\n    classDef condition fill:#fe9,stroke:#333,stroke-width:2px;\n    class A startend;\n    class B,C,F,G operation;\n    class D,E condition;\n```",
+          "questions": "",
+          "checksum": "169b8699354ee73d0468e77dcc68301c"
+        }
+      ],
+      "folders": [],
+      "summary": "```mermaid\ngraph TD\n    subgraph delete_gh_workflows\n        A[Start] --> B{Parse Arguments}\n        B --> C[Get List of Remote Branches]\n        C --> D[Clone Repo to temp_repo]\n        D --> E{For Each Branch}\n        E -->|For Each| F[Switch to Branch]\n        F --> G{Check .github/workflows Exists}\n        G -->|Exists| H[Delete .github/workflows Folder]\n        H --> I[Add Changes]\n        I --> J[Commit Changes]\n        J --> K[Push Changes]\n        G -->|Does Not Exist| L[Print Folder Not Found]\n        K --> M{More Branches?}\n        L --> M\n        M -->|Yes| F\n        M -->|No| N[Cleanup: Delete temp_repo]\n        N --> O[End]\n    end\n\n    subgraph remove_envs\n        P[Start] --> Q{Parse Arguments}\n        Q --> R[Get Conda Environments]\n        R --> S{Check Each Environment}\n        S -->|For Each| T[Remove Environment]\n        T --> U[Delete Folders with Prefix]\n        U --> V[End]\n    end\n\n    style delete_gh_workflows fill:#f9f,stroke:#333,stroke-width:2px\n    style remove_envs fill:#bbf,stroke:#f66,stroke-width:2px\n\n    %% Connections between subgraphs to illustrate potential workflow or dependencies\n    %% Assuming these scripts might be part of a larger cleanup or setup process\n    V --> A : \"Subsequent Cleanup\"\n    O --> P : \"Preceding Task\"\n```",
+      "questions": "",
+      "checksum": "7443a376a91c2fb27fd0d8b4248e5b31"
+    },
+    {
+      "folderName": "make_repo",
+      "folderPath": ".docy/docs/json/collect/make_repo",
+      "url": "/tree/master/.docy/docs/json/collect/make_repo",
+      "files": [
+        {
+          "fileName": "call_make_repo.py",
+          "filePath": "collect/make_repo/call_make_repo.py",
+          "url": "/blob/master/collect/make_repo/call_make_repo.py",
+          "summary": "```mermaid\ngraph TD\n    A[Start] --> B{For each repo in repos}\n    B -->|For each repo| C[Make mirror repo for repo]\n    C --> D{Check if make_repo was successful}\n    D -->|Success| E[Print success message]\n    D -->|Error| F[Print error message]\n    E --> G[End]\n    F --> G\n```",
+          "questions": "",
+          "checksum": "57649720b537c6b198e4a27136b3a83a"
+        },
+        {
+          "fileName": "make_repo.sh",
+          "filePath": "collect/make_repo/make_repo.sh",
+          "url": "/blob/master/collect/make_repo/make_repo.sh",
+          "summary": "```mermaid\ngraph TD\n    A[Start] --> B{Check if target repository exists}\n    B -->|No| C[Exit]\n    B -->|Yes| D[Set organization and repository names]\n    D --> E{Check if new repository already exists}\n    E -->|Yes| F[Inform repository exists, then exit]\n    E -->|No| G[Create mirror repository]\n    G --> H{Check if repository creation was successful}\n    H -->|No| I[Inform failure, then exit]\n    H -->|Yes| J[Inform repository created successfully]\n    J --> K{Check if local repository directory exists}\n    K -->|Yes| L[Inform directory exists, then exit]\n    K -->|No| M[Clone the target repository]\n    M --> N[Perform mirror push of files]\n    N --> O[Remove the target repository directory]\n    O --> P[Clone the mirror repository]\n    P --> Q{Check if .github/workflows exists}\n    Q -->|Yes| R[Remove .github/workflows directory]\n    R --> S[Commit and push changes]\n    Q -->|No| T[Inform .github/workflows does not exist]\n    S --> U[Cleanup cloned mirror repository]\n    T --> U\n    U --> V[End]\n```",
+          "questions": "",
+          "checksum": "1cb4c02321aedbd331913076fd8a4ec2"
+        }
+      ],
+      "folders": [],
+      "summary": "```mermaid\ngraph TD\n    A[Start call_make_repo.py] --> B{For each repo in repos}\n    B -->|For each repo| C[Make mirror repo for repo using make_repo.sh]\n    C --> D{Check if target repository exists}\n    D -->|No| E[Exit make_repo.sh]\n    D -->|Yes| F[Set organization and repository names]\n    F --> G{Check if new repository already exists}\n    G -->|Yes| H[Inform repository exists, then exit make_repo.sh]\n    G -->|No| I[Create mirror repository]\n    I --> J{Check if repository creation was successful}\n    J -->|No| K[Inform failure, then exit make_repo.sh]\n    J -->|Yes| L[Inform repository created successfully]\n    L --> M{Check if local repository directory exists}\n    M -->|Yes| N[Inform directory exists, then exit make_repo.sh]\n    M -->|No| O[Clone the target repository]\n    O --> P[Perform mirror push of files]\n    P --> Q[Remove the target repository directory]\n    Q --> R[Clone the mirror repository]\n    R --> S{Check if .github/workflows exists}\n    S -->|Yes| T[Remove .github/workflows directory]\n    T --> U[Commit and push changes]\n    S -->|No| V[Inform .github/workflows does not exist]\n    U --> W[Cleanup cloned mirror repository]\n    V --> W\n    W --> X[End make_repo.sh]\n    X --> Y{Check if make_repo was successful in call_make_repo.py}\n    Y -->|Success| Z[Print success message]\n    Y -->|Error| AA[Print error message]\n    Z --> AB[End call_make_repo.py]\n    AA --> AB\n```",
+      "questions": "",
+      "checksum": "c65e1f75456b90ae55275ee58759ac4e"
+    }
+  ],
+  "summary": "```mermaid\ngraph TD\n    subgraph swe_bench_collect\n        A[Start] --> B[get_top_pypi.py: Fetch PyPI Packages]\n        B --> C[get_tasks_pipeline.py: Process Repositories]\n        C --> D[print_pulls.py: Log Pull Requests]\n        D --> E[utils.py: Utility Functions]\n        E --> F[End]\n    end\n\n    subgraph cleanup\n        G[cleanup: Start] --> H[delete_gh_workflows: Delete GitHub Workflows]\n        H --> I[remove_envs: Remove Conda Environments]\n        I --> J[cleanup: End]\n    end\n\n    subgraph make_repo\n        K[make_repo: Start] --> L[call_make_repo.py: Initiate Repository Creation]\n        L --> M[make_repo.sh: Create and Configure Repositories]\n        M --> N[make_repo: End]\n    end\n\n    %% Connections between main tasks and cleanup/make_repo subgraphs\n    F --> G : \"Pre-cleanup\"\n    J --> K : \"Post-cleanup, Pre-make_repo\"\n    N --> A : \"Cycle back to start\"\n\n    style swe_bench_collect fill:#f9f,stroke:#333,stroke-width:4px\n    style cleanup fill:#bbf,stroke:#f66,stroke-width:4px\n    style make_repo fill:#bff,stroke:#333,stroke-width:4px\n```",
+  "questions": "",
+  "checksum": "37bdd18ef5e896351c90d2e357265c7e"
+}

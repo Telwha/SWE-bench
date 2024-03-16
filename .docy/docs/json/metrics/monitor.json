@@ -1,0 +1,8 @@
+{
+  "fileName": "monitor.py",
+  "filePath": "metrics/monitor.py",
+  "url": "/blob/master/metrics/monitor.py",
+  "summary": "```mermaid\ngraph TD\n    A[Start monitor_validation] --> B[Iterate through log files]\n    B --> C{Check if patch applied}\n    C -->|Yes| D[Count patch applies]\n    D --> E{Check for TESTS_TIMEOUT}\n    E -->|Yes| F[Append to timeout list]\n    E -->|No| G{Check patch applies}\n    G -->|0| H[Append to corrupt_test_patch list]\n    G -->|1| I[Append to corrupt_patch list]\n    G -->|2| J[Append to success list]\n    C -->|No| K[Append to failed_install list]\n    L[End monitor_validation] <-- F\n    L <-- H\n    L <-- I\n    L <-- J\n    L <-- K\n    L --> M[Log results]\n    M --> N[Assert all instances accounted for]\n    N --> O[Return lists]\n\n    P[Start monitor_logs_same_diff] --> Q[Iterate through log files]\n    Q --> R{Check if repo provided}\n    R -->|Yes| S[Use provided repo]\n    R -->|No| T[Get repo from log path]\n    S --> U[Get log parser]\n    T --> U\n    U --> V[Get pre, post patch behavior]\n    V --> W{Check if behavior is same}\n    W -->|Yes| X[Append to logs_same list]\n    W -->|No| Y[Append to logs_diff list]\n    Z[End monitor_logs_same_diff] <-- X\n    Z <-- Y\n    Z --> AA[Return lists]\n```\nThis mermaid diagram illustrates the flow and decision-making process within the `monitor_validation` and `monitor_logs_same_diff` functions. It shows how log files are processed, analyzed for specific conditions (such as patch application success, timeouts, and pre/post patch behavior differences), and categorized accordingly.",
+  "questions": "",
+  "checksum": "477807fc92b3b0658b06cf2d60b1e29b"
+}

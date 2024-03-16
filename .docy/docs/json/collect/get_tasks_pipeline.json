@@ -1,0 +1,8 @@
+{
+  "fileName": "get_tasks_pipeline.py",
+  "filePath": "collect/get_tasks_pipeline.py",
+  "url": "/blob/master/collect/get_tasks_pipeline.py",
+  "summary": "```mermaid\ngraph TD\n    A[Start] --> B{Load Environment Variables}\n    B --> C[Parse Command Line Arguments]\n    C --> D[Split Repositories Among Tokens]\n    D --> E[Construct Data Files for Each Token]\n    E --> F{Check if PR Data Exists}\n    F -->|Yes| G[Skip PR Data Retrieval]\n    F -->|No| H[Retrieve PR Data]\n    H --> I{Check if Task Data Exists}\n    I -->|Yes| J[Skip Task Data Creation]\n    I -->|No| K[Create Task Data]\n    K --> L[End]\n    G --> L\n    J --> L\n```",
+  "questions": "",
+  "checksum": "cf2eda30b85064942f5bbb5cfcd2b98b"
+}

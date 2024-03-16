@@ -1,0 +1,8 @@
+{
+  "fileName": "utils.py",
+  "filePath": "versioning/utils.py",
+  "url": "/blob/master/versioning/utils.py",
+  "summary": "```mermaid\ngraph TD\n    A[Start] --> B{Check File Type}\n    B -->|JSONL or JSONL.all| C[Read Line by Line]\n    B -->|Other JSON| D[Read Whole File]\n    C --> E[Load JSON Objects]\n    D --> E\n    E --> F[get_instances: Return Task Instances]\n    F --> G{split_instances}\n    G -->|Split List| H[Calculate Average Length]\n    H --> I[Calculate Remainder]\n    I --> J[Split into Sublists]\n    J --> K[Return List of Sublists]\n```\nThis flowchart represents the process described in the provided code. It starts with determining the type of file based on its extension, then proceeds to read and load the task instances from the file. After obtaining the task instances, it demonstrates how the list of instances can be split into approximately equal-length sublists.",
+  "questions": "",
+  "checksum": "dcf01084c877dbdea94da40ca446444f"
+}

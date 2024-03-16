@@ -1,0 +1,103 @@
+{
+  "folderName": "versioning",
+  "folderPath": ".docy/docs/json/versioning",
+  "url": "/tree/master/.docy/docs/json/versioning",
+  "files": [
+    {
+      "fileName": "constants.py",
+      "filePath": "versioning/constants.py",
+      "url": "/blob/master/versioning/constants.py",
+      "summary": "```mermaid\ngraph TD\n    A[Start] --> B{For each repository}\n    B --> C[Identify version file paths]\n    B --> D[Identify version regex patterns]\n    C --> E[Map repo to version file paths]\n    D --> F[Map repo to version regex patterns]\n    E --> G[Prepare version file URLs]\n    F --> H[Prepare regex for version extraction]\n    G --> I[Combine URLs with SWE_BENCH_URL_RAW]\n    H --> J[Define version extraction methods]\n    I --> K[Ready for version check]\n    J --> K\n    K --> L[End]\n\n    style A fill:#f9f,stroke:#333,stroke-width:4px\n    style L fill:#f9f,stroke:#333,stroke-width:4px\n```\nThis diagram illustrates the process of mapping repositories to their version file paths and regex patterns for version extraction within the `swe-bench` project. It starts by identifying the necessary file paths and regex patterns for each repository, then maps these to prepare URLs and regex methods for version checking, and finally combines these elements to ready the system for a version check operation.",
+      "questions": "",
+      "checksum": "716641356bf7e42db84c3ea5e3db2bd4"
+    },
+    {
+      "fileName": "get_versions.py",
+      "filePath": "versioning/get_versions.py",
+      "url": "/blob/master/versioning/get_versions.py",
+      "summary": "```mermaid\ngraph TD\n    A[Start] --> B{Parse Arguments}\n    B --> C[Get Task Instances]\n    C --> D{Split Instances for Threads}\n    D --> E{Determine Retrieval Method}\n    E -->|GitHub| F[Get Versions from Web]\n    E -->|Build| G[Get Versions from Build]\n    E -->|Mix| H[Get Versions from Web and Build]\n    F --> I[Merge Results and Cleanup]\n    G --> I\n    H --> I\n    I --> J[End]\n\n    subgraph web \"Web Version Retrieval\"\n        F --> F1[Search GitHub for Versions]\n        F1 --> F2[Save Versions to File]\n    end\n\n    subgraph build \"Build Version Retrieval\"\n        G --> G1[Setup Environment]\n        G1 --> G2[Clone Repo and Conda Env per Thread]\n        G2 --> G3[Build Repo and Retrieve Versions]\n        G3 --> G4[Save Versions to File]\n    end\n\n    subgraph mix \"Mixed Version Retrieval\"\n        H --> H1[Search GitHub for Versions]\n        H1 --> H2[Filter Instances Not Found]\n        H2 --> H3[Setup Environment]\n        H3 --> H4[Clone Repo and Conda Env per Thread]\n        H4 --> H5[Build Repo and Retrieve Versions]\n        H5 --> H6[Save Versions to File]\n    end\n```",
+      "questions": "",
+      "checksum": "fae811637ce695f62654c5dd4e6d0208"
+    },
+    {
+      "fileName": "run_get_versions.sh",
+      "filePath": "versioning/run_get_versions.sh",
+      "url": "/blob/master/versioning/run_get_versions.sh",
+      "summary": "```mermaid\ngraph TD\n    A[Start] --> B{Determine Retrieval Method}\n\n    B -->|build| C[Setup Conda Environment]\n    B -->|github| D[Setup GitHub Retrieval]\n\n    C --> E[Build Task Instances Locally]\n    D --> F[Retrieve Task Instances from GitHub]\n\n    E --> G[Specify Number of Threads for Building]\n    F --> H[Specify Number of Workers for Retrieval]\n\n    G --> I[Define Path to Conda Installation]\n    H --> J[Define Output Directory for Saved Instances]\n\n    I --> K[Execute Local Building Process]\n    J --> L[Execute GitHub Retrieval Process]\n\n    K --> M[End]\n    L --> M\n```\nThis mermaid diagram illustrates the steps involved in the `get_versions.py` script from the `swe-bench` project, focusing on the process of retrieving versions of task instances either by building them locally or fetching them from GitHub, based on the specified retrieval method.",
+      "questions": "",
+      "checksum": "b88dc95619a766b376132a156c3d7b40"
+    },
+    {
+      "fileName": "utils.py",
+      "filePath": "versioning/utils.py",
+      "url": "/blob/master/versioning/utils.py",
+      "summary": "```mermaid\ngraph TD\n    A[Start] --> B{Check File Type}\n    B -->|JSONL or JSONL.all| C[Read Line by Line]\n    B -->|Other JSON| D[Read Whole File]\n    C --> E[Load JSON Objects]\n    D --> E\n    E --> F[get_instances: Return Task Instances]\n    F --> G{split_instances}\n    G -->|Split List| H[Calculate Average Length]\n    H --> I[Calculate Remainder]\n    I --> J[Split into Sublists]\n    J --> K[Return List of Sublists]\n```\nThis flowchart represents the process described in the provided code. It starts with determining the type of file based on its extension, then proceeds to read and load the task instances from the file. After obtaining the task instances, it demonstrates how the list of instances can be split into approximately equal-length sublists.",
+      "questions": "",
+      "checksum": "dcf01084c877dbdea94da40ca446444f"
+    }
+  ],
+  "folders": [
+    {
+      "folderName": "extract_web",
+      "folderPath": ".docy/docs/json/versioning/extract_web",
+      "url": "/tree/master/.docy/docs/json/versioning/extract_web",
+      "files": [
+        {
+          "fileName": "get_versions_astropy.py",
+          "filePath": "versioning/extract_web/get_versions_astropy.py",
+          "url": "/blob/master/versioning/extract_web/get_versions_astropy.py",
+          "summary": "```mermaid\ngraph TD\n    A[Start] --> B[Import Dependencies]\n\n    B --> C[Get Raw Astropy Dataset]\n    C --> D[Get Version to Date from Astropy Homepage]\n\n    D --> E[Extract (Date, Version) Pairs]\n    E --> F[Construct (Version, Date) Pairs]\n    F --> G[Group Times by Major/Minor Version]\n    G --> H[Pick Most Recent Time as Version Cut Off Date]\n\n    H --> I[Assign Version to Each Task Instance]\n    I --> J[Construct Map of Versions to Task Instances]\n\n    J --> K[Save Matplotlib Versioned Data to Repository]\n    K --> L[End]\n```",
+          "questions": "",
+          "checksum": "c1ccda7354babc53ab36fe502cc75fc7"
+        },
+        {
+          "fileName": "get_versions_matplotlib.py",
+          "filePath": "versioning/extract_web/get_versions_matplotlib.py",
+          "url": "/blob/master/versioning/extract_web/get_versions_matplotlib.py",
+          "summary": "```mermaid\ngraph TD\n    A[Start] --> B[Import Libraries]\n    B --> C[Load Matplotlib Task Instances]\n    C --> D[Fetch Matplotlib Version History]\n    D --> E[Extract Version and Date Information]\n    E --> F[Filter and Format Dates and Versions]\n    F --> G[Assign Versions to Tasks Based on Date]\n    G --> H[Map Versions to Task Instances]\n    H --> I[Save Versioned Data to File]\n    I --> J[End]\n```",
+          "questions": "",
+          "checksum": "b14941936d55d87e33e129ff0cdaa4c7"
+        },
+        {
+          "fileName": "get_versions_pvlib-python.py",
+          "filePath": "versioning/extract_web/get_versions_pvlib-python.py",
+          "url": "/blob/master/versioning/extract_web/get_versions_pvlib-python.py",
+          "summary": "```mermaid\ngraph TD\n    A[Start] --> B(Get raw dataset)\n    B --> C(Get version to date from webpage)\n    C --> D{Iterate through matches}\n    D --> E[Construct (version, date) pairs]\n    E --> F[Group times by major/minor version]\n    F --> G[Pick most recent time as version cut-off date]\n    G --> H{Assign version to each task instance}\n    H --> I[Construct map of versions to task instances]\n    I --> J[Save versioned data to repository]\n    J --> K[End]\n```",
+          "questions": "",
+          "checksum": "c35b34254a4afce7c7564efb717cae39"
+        },
+        {
+          "fileName": "get_versions_pydicom.py",
+          "filePath": "versioning/extract_web/get_versions_pydicom.py",
+          "url": "/blob/master/versioning/extract_web/get_versions_pydicom.py",
+          "summary": "```mermaid\ngraph TD\n    A[Start] --> B{Get pydicom task instances}\n    B --> C[Fetch pydicom FAQ page]\n    C --> D[Parse HTML for release table]\n    D --> E[Extract release dates and versions]\n    E --> F[Sort releases by date]\n    F --> G{For each task instance}\n    G -->|For each release| H[Check if release date < task creation date]\n    H -->|True| I[Assign version to task]\n    H -->|False| J[Assign oldest version to task]\n    I --> K[Continue to next task]\n    J --> K\n    K --> L{All tasks processed}\n    L -->|True| M[Write updated tasks to file]\n    M --> N[End]\n```\nThis flowchart represents the process of updating pydicom task instances with their corresponding pydicom version based on the task's creation date and the release dates of pydicom versions. It starts by fetching the task instances and the pydicom FAQ page, then parses the release information, and finally updates each task instance with the appropriate version before saving the updated list.",
+          "questions": "",
+          "checksum": "2a54db7d63d594e6a79955d78fdd89d4"
+        },
+        {
+          "fileName": "get_versions_sqlfluff.py",
+          "filePath": "versioning/extract_web/get_versions_sqlfluff.py",
+          "url": "/blob/master/versioning/extract_web/get_versions_sqlfluff.py",
+          "summary": "```mermaid\ngraph TD\n    A[Start] --> B{Get raw sqlfluff dataset}\n    B --> C[Get all GitHub releases]\n    C --> D[Extract version and date from releases]\n    D --> E[Collect version/date pairs]\n    E --> F[Sort version/date pairs]\n    F --> G[Iterate through data_tasks]\n    G --> H[Assign versions to tasks]\n    H --> I[Save versioned data to repository]\n    I --> J[Print all versions]\n    J --> K[End]\n    \n    style A fill:#f9f,stroke:#333,stroke-width:4px\n    style K fill:#f9f,stroke:#333,stroke-width:4px\n```",
+          "questions": "",
+          "checksum": "4780a6abd0d0ed3435a027a619de1569"
+        },
+        {
+          "fileName": "get_versions_xarray.py",
+          "filePath": "versioning/extract_web/get_versions_xarray.py",
+          "url": "/blob/master/versioning/extract_web/get_versions_xarray.py",
+          "summary": "```mermaid\ngraph TD\n    A[Start] --> B[Import Libraries]\n\n    B --> C[Append harness utils to sys.path]\n    C --> D[Get raw xarray dataset instances]\n\n    D --> E[Fetch xarray version info from webpage]\n    E --> F[Extract version and date info using regex]\n    F --> G[Format and sort version-date pairs]\n\n    G --> H[Assign version to each task based on creation date]\n    H --> I[Save versioned xarray task instances to file]\n\n    I --> J[End]\n\n    style A fill:#f9f,stroke:#333,stroke-width:4px\n    style J fill:#f9f,stroke:#333,stroke-width:4px\n```\nThis flowchart represents the sequence of operations performed by the code snippet. It starts with importing necessary libraries and ends with saving the versioned xarray task instances to a file. The process involves fetching and processing version information from the xarray documentation webpage, then assigning the appropriate version to each task based on its creation date before finally saving this enriched dataset.",
+          "questions": "",
+          "checksum": "b39cba33b43e614732bbff78821a92d1"
+        }
+      ],
+      "folders": [],
+      "summary": "```mermaid\ngraph TD\n    A[Start] --> B[Import Necessary Libraries/Dependencies]\n    B --> C[Fetch Task Instances]\n    C --> D[Fetch Version Information]\n    D --> E[Extract Version and Date Information]\n    E --> F[Format and Sort Version-Date Pairs]\n    F --> G[Assign Versions to Tasks Based on Date]\n    G --> H[Map Versions to Task Instances]\n    H --> I[Save Versioned Data]\n    I --> J[End]\n\n    subgraph astropy\n        D1[Get Raw Astropy Dataset] --> D2[Get Version to Date from Astropy Homepage] --> E1[Extract (Date, Version) Pairs]\n    end\n\n    subgraph matplotlib\n        D3[Load Matplotlib Task Instances] --> D4[Fetch Matplotlib Version History] --> E2[Extract Version and Date Information]\n    end\n\n    subgraph pvlib-python\n        D5[Get raw dataset from webpage] --> D6[Iterate through matches] --> E3[Construct (version, date) pairs]\n    end\n\n    subgraph pydicom\n        D7[Fetch pydicom FAQ page] --> D8[Parse HTML for release table] --> E4[Extract release dates and versions]\n    end\n\n    subgraph sqlfluff\n        D9[Get all GitHub releases] --> D10[Extract version and date from releases] --> E5[Collect version/date pairs]\n    end\n\n    subgraph xarray\n        D11[Fetch xarray version info from webpage] --> D12[Extract version and date info using regex] --> E6[Format and sort version-date pairs]\n    end\n\n    style astropy fill:#bbf,stroke:#333,stroke-width:2px\n    style matplotlib fill:#bbf,stroke:#333,stroke-width:2px\n    style pvlib-python fill:#bbf,stroke:#333,stroke-width:2px\n    style pydicom fill:#bbf,stroke:#333,stroke-width:2px\n    style sqlfluff fill:#bbf,stroke:#333,stroke-width:2px\n    style xarray fill:#bbf,stroke:#333,stroke-width:2px\n```\n\nThis mermaid markdown code illustrates the general workflow for extracting and processing version information for various libraries (Astropy, Matplotlib, pvlib-python, pydicom, sqlfluff, and xarray) within the swe-bench project. Each library follows a similar pattern of importing necessary libraries or dependencies, fetching task instances, fetching version information from different sources (homepage, GitHub releases, FAQ pages, etc.), extracting and formatting version-date pairs, assigning versions to tasks based on dates, mapping these versions to task instances, and finally saving the versioned data. The subgraphs represent the specific processes for each library, highlighting the unique steps taken to extract and process version information for that library.",
+      "questions": "",
+      "checksum": "0caa9620e41b65b287f2b138f70124b7"
+    }
+  ],
+  "summary": "```mermaid\ngraph TD\n    A[Start Versioning Process] --> B[Constants Setup]\n    B --> C[Get Versions]\n    B --> D[Run Get Versions Script]\n    B --> E[Utilize Utilities]\n    B --> F[Extract Web Version Information]\n\n    C --> G[Merge and Cleanup Version Data]\n    D --> H[Local Build or GitHub Retrieval]\n    E --> I[File Type Check and Instance Splitting]\n    F --> J[Version and Date Extraction for Libraries]\n\n    G --> K[Version Data Ready for Analysis]\n    H --> K\n    I --> K\n    J --> K\n\n    K --> L[Map Versions to Task Instances]\n    L --> M[Save Versioned Data]\n    M --> N[End Versioning Process]\n\n    subgraph Constants\n        B --> B1[Identify Version File Paths]\n        B --> B2[Identify Version Regex Patterns]\n        B1 --> B3[Prepare Version File URLs]\n        B2 --> B4[Prepare Regex for Version Extraction]\n        B3 --> B5[Combine URLs with SWE_BENCH_URL_RAW]\n        B4 --> B6[Define Version Extraction Methods]\n    end\n\n    subgraph Get Versions\n        C --> C1[Parse Arguments]\n        C1 --> C2[Get Task Instances]\n        C2 --> C3[Split Instances for Threads]\n        C3 --> C4[Determine Retrieval Method]\n        C4 --> C5[Version Retrieval]\n        C5 --> G\n    end\n\n    subgraph Run Get Versions Script\n        D --> D1[Determine Retrieval Method]\n        D1 --> D2[Setup Environment]\n        D2 --> D3[Specify Threads/Workers]\n        D3 --> D4[Define Paths and Directories]\n        D4 --> D5[Execute Retrieval Process]\n        D5 --> H\n    end\n\n    subgraph Utilize Utilities\n        E --> E1[Check File Type]\n        E1 --> E2[Read and Load JSON]\n        E2 --> E3[Split Instances]\n        E3 --> I\n    end\n\n    subgraph Extract Web Version Information\n        F --> F1[Import Libraries/Dependencies]\n        F1 --> F2[Fetch Task Instances]\n        F2 --> F3[Fetch and Extract Version Information]\n        F3 --> F4[Format and Sort Version-Date Pairs]\n        F4 --> F5[Assign Versions Based on Date]\n        F5 --> J\n    end\n\n    style Constants fill:#f9f,stroke:#333,stroke-width:2px\n    style Get Versions fill:#bbf,stroke:#333,stroke-width:2px\n    style Run Get Versions Script fill:#bbf,stroke:#333,stroke-width:2px\n    style Utilize Utilities fill:#bbf,stroke:#333,stroke-width:2px\n    style Extract Web Version Information fill:#bbf,stroke:#333,stroke-width:2px\n```",
+  "questions": "",
+  "checksum": "937d82ec4c09f7cb2f9dcc7e87eca7ba"
+}

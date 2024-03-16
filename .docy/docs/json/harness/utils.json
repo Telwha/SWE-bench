@@ -1,0 +1,8 @@
+{
+  "fileName": "utils.py",
+  "filePath": "harness/utils.py",
+  "url": "/blob/master/harness/utils.py",
+  "summary": "```mermaid\nflowchart TD\n    A[Start] --> B{Load Environment Variables}\n    B --> C[Get Task Instances]\n    C --> D{For Each Instance}\n    D --> E[Get Conda Environment Names]\n    E --> F[Get Environment YML]\n    F --> G[Get Requirements.txt]\n    G --> H[Get Test Directives]\n    H --> I[Clone Repo]\n    I --> J[Split Instances]\n    J --> K[Find Python Version by Date]\n    K --> L[Extract Minimal Patch]\n    L --> M[Check for Attribute or Import Error]\n    M --> N[End]\n\n    click E \"Get list of conda environment names for given conda path\"\n    click F \"Get environment.yml for given task instance\"\n    click G \"Get requirements.txt for given task instance\"\n    click H \"Get test directives from the test_patch of a task instance\"\n    click I \"Wrapper for cloning repo from swe-bench organization\"\n    click J \"Split a list into n approximately equal length sublists\"\n    click K \"Find python version closest to given date\"\n    click L \"Wrapper function that takes hunk and recalculates hunk start/end position and diff delta\"\n    click M \"Check to see if Attribute/Import-prefix is in log text\"\n```\nThis flowchart represents the sequence of operations performed by the code in the `swe-bench` project file. Each node represents a function or a step in the process, illustrating how the code manages environment variables, interacts with task instances, and processes information related to Python environments, requirements, and repositories.",
+  "questions": "",
+  "checksum": "c05e5c3591deff056f0125955626075f"
+}

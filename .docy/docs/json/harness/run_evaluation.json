@@ -1,0 +1,8 @@
+{
+  "fileName": "run_evaluation.py",
+  "filePath": "harness/run_evaluation.py",
+  "url": "/blob/master/harness/run_evaluation.py",
+  "summary": "```mermaid\nflowchart TD\n    A[Start] --> B{Validate Arguments}\n    B -->|Invalid| C[Raise ValueError]\n    B -->|Valid| D[Load Tasks]\n    D --> E{Tasks Source}\n    E -->|Local Path| F[Load from Path]\n    E -->|dev/test| G[Load from HuggingFace Datasets]\n    F --> H[Verify Tasks Format]\n    G --> H\n    H --> I[Validate Predictions]\n    I --> J[Group Predictions by Model]\n    J --> K[For Each Model]\n    K --> L[Group Predictions by Repo and Version]\n    L --> M[For Each Repo/Version]\n    M --> N[Create Testbed Folder]\n    N --> O[Save Predictions to File]\n    O --> P{Skip Existing Checks}\n    P -->|Yes| Q[Filter Already Evaluated Predictions]\n    P -->|No| R[Proceed Without Filtering]\n    Q --> S[Log Info & Skip if All Exist]\n    R --> S\n    S --> T{Any Predictions to Evaluate?}\n    T -->|No| U[Log Info & Exit]\n    T -->|Yes| V[Prepare Evaluation Arguments]\n    V --> W{Run Evaluation}\n    W -->|Single Process| X[Sequential Evaluation]\n    W -->|Multiple Processes| Y[Parallel Evaluation]\n    X --> Z[Clean Up]\n    Y --> Z\n    Z --> AA[End]\n```",
+  "questions": "",
+  "checksum": "7d826297051deff10518210835f311aa"
+}

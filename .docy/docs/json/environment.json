@@ -1,0 +1,8 @@
+{
+  "fileName": "environment.yml",
+  "filePath": "environment.yml",
+  "url": "/blob/master/environment.yml",
+  "summary": "```mermaid\ngraph TD\n    A[Start] --> B{Check Python Version}\n    B -->|3.9| C[Setup Environment]\n    C --> D[Install Dependencies]\n    D --> E[Install pip packages]\n    E --> F[beautifulsoup4 for HTML parsing]\n    E --> G[chardet for character encoding detection]\n    E --> H[ghapi for GitHub API interaction]\n    E --> I[GitPython for Git operations]\n    E --> J[python-dotenv for .env file management]\n    E --> K[requests for HTTP requests]\n    E --> L[rich for rich text and beautiful formatting in the terminal]\n    E --> M[transformers for state-of-the-art machine learning]\n    D --> N[Install conda-forge packages]\n    N --> O[gh for GitHub CLI]\n    O --> P[End]\n\n    style A fill:#f9f,stroke:#333,stroke-width:4px\n    style P fill:#f9f,stroke:#333,stroke-width:4px\n```",
+  "questions": "",
+  "checksum": "f6b29877d09332c636b13154202dbc5d"
+}

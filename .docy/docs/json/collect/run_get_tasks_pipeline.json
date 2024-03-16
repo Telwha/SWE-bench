@@ -1,0 +1,8 @@
+{
+  "fileName": "run_get_tasks_pipeline.sh",
+  "filePath": "collect/run_get_tasks_pipeline.sh",
+  "url": "/blob/master/collect/run_get_tasks_pipeline.sh",
+  "summary": "```mermaid\ngraph TD\n    A[Start] --> B{Check for .env file}\n    B -->|Exists| C[Use GITHUB_TOKENS from .env]\n    B -->|Does not exist| D[Proceed without GITHUB_TOKENS]\n    C --> E[Set up parallelization with tokens]\n    D --> E\n    E --> F[Run get_tasks_pipeline.py script]\n    F --> G[Specify repositories to analyze]\n    G -->|scikit-learn/scikit-learn| H[Fetch PRs for scikit-learn]\n    G -->|pallets/flask| I[Fetch PRs for Flask]\n    H --> J[Save PRs to specified path]\n    I --> J\n    J --> K[Save tasks to specified path]\n    K --> L[End]\n```",
+  "questions": "",
+  "checksum": "45c8358a9c359f4b0c9ad22194553572"
+}

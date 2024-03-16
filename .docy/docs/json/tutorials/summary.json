@@ -1,0 +1,19 @@
+{
+  "folderName": "tutorials",
+  "folderPath": ".docy/docs/json/tutorials",
+  "url": "/tree/master/.docy/docs/json/tutorials",
+  "files": [
+    {
+      "fileName": "validation.ipynb",
+      "filePath": "tutorials/validation.ipynb",
+      "url": "/blob/master/tutorials/validation.ipynb",
+      "summary": "```mermaid\nflowchart TD\n    A[Start] --> B{Import Modules}\n    B --> C[Declare Repository and Log Directory]\n    C --> D[Load and Sort Task Instances]\n    D --> E[Monitor Validation]\n    E --> F[Monitor Logs for Same/Different Outputs]\n    F --> G[Convert Logs to Ground Truth for Different Outputs]\n    G --> H[Filter and Prepare Final Task Instances]\n    H --> I[Save Final Task Instances to JSON]\n    I --> J[End]\n    \n    style A fill:#f9f,stroke:#333,stroke-width:4px\n    style J fill:#f9f,stroke:#333,stroke-width:4px\n```\nThis flowchart represents the sequential steps taken by the code in the provided file. Starting with importing necessary modules, it moves through declaring the repository and log directory, loading and sorting task instances, monitoring validation and log outputs, converting logs to ground truth for differing outputs, filtering and preparing final task instances, and finally saving these instances to a JSON file.",
+      "questions": "",
+      "checksum": "8bdc054fc1ab09055dbf8458734bbc3e"
+    }
+  ],
+  "folders": [],
+  "summary": "```mermaid\nflowchart TB\n    subgraph swe_bench_tutorials\n    direction TB\n    A[Start] --> B{Import Modules}\n    B --> C[Declare Repository and Log Directory]\n    C --> D[Load and Sort Task Instances]\n    D --> E[Monitor Validation]\n    E --> F[Monitor Logs for Same/Different Outputs]\n    F --> G[Convert Logs to Ground Truth for Different Outputs]\n    G --> H[Filter and Prepare Final Task Instances]\n    H --> I[Save Final Task Instances to JSON]\n    I --> J[End]\n    end\n\n    subgraph other_parts_of_project\n    direction TB\n    K[Other Project Modules] --> L{Data Collection}\n    L --> M[Data Preprocessing]\n    M --> N[Model Training]\n    N --> O[Model Evaluation]\n    O --> P[Deployment]\n    end\n\n    swe_bench_tutorials --> other_parts_of_project\n\n    style swe_bench_tutorials fill:#bbf,stroke:#333,stroke-width:2px\n    style other_parts_of_project fill:#bfb,stroke:#333,stroke-width:2px\n    style A fill:#f9f,stroke:#333,stroke-width:4px\n    style J fill:#f9f,stroke:#333,stroke-width:4px\n```\n\nThis mermaid markdown code illustrates the steps of the code within the `swe-bench` project's `tutorials` folder, specifically focusing on the validation process. It also shows how this process might fit into the larger project by connecting the tutorial's end to other project modules, indicating a flow from data collection to deployment. This visualization helps in understanding the role of the tutorial within the context of the entire project, emphasizing its position in preparing and validating task instances before they are utilized in further project stages like model training and evaluation.",
+  "questions": "",
+  "checksum": "c797fa7fcc3701e470e92bcbbbfbab3b"
+}

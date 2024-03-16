@@ -1,0 +1,8 @@
+{
+  "fileName": "get_versions.py",
+  "filePath": "versioning/get_versions.py",
+  "url": "/blob/master/versioning/get_versions.py",
+  "summary": "```mermaid\ngraph TD\n    A[Start] --> B{Parse Arguments}\n    B --> C[Get Task Instances]\n    C --> D{Split Instances for Threads}\n    D --> E{Determine Retrieval Method}\n    E -->|GitHub| F[Get Versions from Web]\n    E -->|Build| G[Get Versions from Build]\n    E -->|Mix| H[Get Versions from Web and Build]\n    F --> I[Merge Results and Cleanup]\n    G --> I\n    H --> I\n    I --> J[End]\n\n    subgraph web \"Web Version Retrieval\"\n        F --> F1[Search GitHub for Versions]\n        F1 --> F2[Save Versions to File]\n    end\n\n    subgraph build \"Build Version Retrieval\"\n        G --> G1[Setup Environment]\n        G1 --> G2[Clone Repo and Conda Env per Thread]\n        G2 --> G3[Build Repo and Retrieve Versions]\n        G3 --> G4[Save Versions to File]\n    end\n\n    subgraph mix \"Mixed Version Retrieval\"\n        H --> H1[Search GitHub for Versions]\n        H1 --> H2[Filter Instances Not Found]\n        H2 --> H3[Setup Environment]\n        H3 --> H4[Clone Repo and Conda Env per Thread]\n        H4 --> H5[Build Repo and Retrieve Versions]\n        H5 --> H6[Save Versions to File]\n    end\n```",
+  "questions": "",
+  "checksum": "fae811637ce695f62654c5dd4e6d0208"
+}
