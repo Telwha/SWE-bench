@@ -46,6 +46,7 @@ MODEL_COST_PER_INPUT = {
     "gpt-4-0613": 0.00003,
     "gpt-4-32k-0613": 0.00006,
     "gpt-4-1106-preview": 0.00001,
+    "ft:gpt-3.5-turbo-1106:telwha:swe-bench-30k:935PVb8R": 0.000003
 }
 
 # The cost per token for each model output.
@@ -61,6 +62,7 @@ MODEL_COST_PER_OUTPUT = {
     "gpt-4-32k-0613": 0.00012,
     "gpt-4-32k": 0.00012,
     "gpt-4-1106-preview": 0.00003,
+    "ft:gpt-3.5-turbo-1106:telwha:swe-bench-30k:935PVb8R": 0.000006
 }
 
 # used for azure
@@ -426,7 +428,7 @@ def main(
     }
     if model_name_or_path.startswith("claude"):
         anthropic_inference(**inference_args)
-    elif model_name_or_path.startswith("gpt"):
+    elif model_name_or_path.startswith("gpt") or (model_name_or_path.startswith("ft:") and "gpt" in model_name_or_path):
         openai_inference(**inference_args)
     else:
         raise ValueError(f"Invalid model name or path {model_name_or_path}")
