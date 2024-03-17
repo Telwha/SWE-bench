@@ -32,6 +32,7 @@ MODEL_LIMITS = {
     "gpt-4-32k-0613": 32_768,
     "gpt-4-0613": 8_192,
     "gpt-4-1106-preview": 128_000,
+    "ft:gpt-3.5-turbo-1106:telwha:swe-bench-30k:935PVb8R": 16_385
 }
 
 # The cost per token for each model input.
