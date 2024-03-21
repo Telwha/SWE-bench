@@ -1,0 +1,73 @@
+Task Metadata:
+	- Instance ID: django__django-15851
+	- Testbed: /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2
+	- Virtual Env.: django__django__4.2
+	- Evaluation Model: ft:gpt-3.5-turbo-1106:telwha:swe-bench-30k:935PVb8R
+>>>>> Patch Apply Failed; (pred_try)
+Output:
+error: corrupt patch at line 21
+>>>>> Applied Patch (pred_minimal_try)
+>>>>> Applied Patch (pred_minimal_try)
+Installation Command: source /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/bin/activate django__django__4.2 && echo 'activate successful' && python -m pip install -e .
+Std. Output: activate successful
+Obtaining file:///Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: asgiref>=3.5.2 in /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/site-packages (from Django==4.2.dev20220717112353) (3.7.2)
+Requirement already satisfied: sqlparse>=0.2.2 in /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/site-packages (from Django==4.2.dev20220717112353) (0.4.4)
+Building wheels for collected packages: Django
+  Building editable for Django (pyproject.toml): started
+  Building editable for Django (pyproject.toml): finished with status 'done'
+  Created wheel for Django: filename=Django-4.2.dev20220717112353-0.editable-py3-none-any.whl size=27026 sha256=2de4a4a7c42c33a4c6aeedbe44c629564f3890896af761b561b3a4b7fc599b22
+  Stored in directory: /private/var/folders/qq/77m5fvhj23759fqt66fmsgpm0000gn/T/pip-ephem-wheel-cache-g4wuyi02/wheels/40/77/ef/4165eaf5cd3119e0ec2fadeb16ce7b0d5330d8ed5a96653827
+Successfully built Django
+Installing collected packages: Django
+  Attempting uninstall: Django
+    Found existing installation: Django 4.2.dev20230104081136
+    Uninstalling Django-4.2.dev20230104081136:
+      Successfully uninstalled Django-4.2.dev20230104081136
+Successfully installed Django-4.2.dev20220717112353
+
+Std. Error: 
+
+>>>>> Init Succeeded
+>>>>> Applied Patch (test)
+>>>>> Applied Patch (pred_minimal)
+Test Script: source /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/bin/activate django__django__4.2 && echo 'activate successful' && ./tests/runtests.py --verbosity 2 dbshell.test_postgresql;
+Output:
+activate successful
+Testing against Django installed in '/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django' with up to 8 processes
+Importing application dbshell
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/./tests/runtests.py", line 766, in <module>
+    failures = django_tests(
+               ^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/./tests/runtests.py", line 425, in django_tests
+    failures = test_runner.run_tests(test_labels)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/test/runner.py", line 1046, in run_tests
+    suite = self.build_suite(test_labels, extra_tests)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/test/runner.py", line 897, in build_suite
+    tests = self.load_tests_for_label(label, discover_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/test/runner.py", line 848, in load_tests_for_label
+    tests = self.test_loader.loadTestsFromName(label)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/loader.py", line 154, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/dbshell/test_postgresql.py", line 9, in <module>
+    from django.db.backends.postgresql.client import DatabaseClient
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/db/backends/postgresql/client.py", line 36
+    args.extend(parameters)
+    ^
+IndentationError: expected an indented block after 'if' statement on line 35
+
+>>>>> Some Tests Failed

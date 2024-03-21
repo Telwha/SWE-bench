@@ -1,0 +1,26 @@
+Task Metadata:
+	- Instance ID: astropy__astropy-13075
+	- Testbed: /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/astropy__astropy/5.0/tmpqd89lu4k/astropy__astropy__5.0
+	- Virtual Env.: astropy__astropy__5.0
+	- Evaluation Model: ft:gpt-3.5-turbo-1106:telwha:swe-bench-30k:935PVb8R
+>>>>> Patch Apply Failed; (pred_try)
+Output:
+Checking patch astropy/cosmology/io/__init__.py...
+error: while searching for:
+from . import cosmology, ecsv, mapping, model, row, table, yaml
+
+
+
+error: patch failed: astropy/cosmology/io/__init__.py:7
+error: astropy/cosmology/io/__init__.py: patch does not apply
+Checking patch astropy/cosmology/io/table.py...
+error: while searching for:
+from astropy.units import Quantity
+from astropy.utils import lazyproperty
+from astropy.visualization import quantity_support
+
+error: patch failed: astropy/cosmology/io/table.py:1
+error: astropy/cosmology/io/table.py: patch does not apply
+>>>>> Patch Apply Failed; (pred_minimal_try)
+Output:
+error: patch fragment without header at line 14: @@ -68,0 +70,14 @@

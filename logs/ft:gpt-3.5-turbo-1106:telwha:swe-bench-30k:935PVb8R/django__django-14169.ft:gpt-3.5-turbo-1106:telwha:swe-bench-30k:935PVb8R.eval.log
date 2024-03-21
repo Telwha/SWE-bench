@@ -1,0 +1,97 @@
+Task Metadata:
+	- Instance ID: django__django-14169
+	- Testbed: /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpftadt5hh/django__django__4.0
+	- Virtual Env.: django__django__4.0
+	- Evaluation Model: ft:gpt-3.5-turbo-1106:telwha:swe-bench-30k:935PVb8R
+>>>>> Patch Apply Failed; (pred_try)
+Output:
+/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpftadt5hh/temp_django__django-14169_pred_try.patch:10: trailing whitespace.
+        else: 
+Checking patch django/db/backends/sqlite3/creation.py...
+error: while searching for:
+        source_database_name = orig_settings_dict['NAME']
+        if self.is_in_memory_db(source_database_name):
+            return orig_settings_dict
+        else:
+            root, ext = os.path.splitext(orig_settings_dict['NAME'])
+            return {**orig_settings_dict, 'NAME': '{}_{}{}'.format(root, suffix, ext)}
+
+
+error: patch failed: django/db/backends/sqlite3/creation.py:55
+error: django/db/backends/sqlite3/creation.py: patch does not apply
+>>>>> Applied Patch (pred_minimal_try)
+>>>>> Applied Patch (pred_minimal_try)
+Installation Command: source /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpz5_xex3z/miniconda3/bin/activate django__django__4.0 && echo 'activate successful' && python -m pip install -e .
+Std. Output: activate successful
+Obtaining file:///Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpftadt5hh/django__django__4.0
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: asgiref>=3.2.10 in /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpz5_xex3z/miniconda3/lib/python3.11/site-packages (from Django==4.0) (3.7.2)
+Requirement already satisfied: pytz in /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpz5_xex3z/miniconda3/lib/python3.11/site-packages (from Django==4.0) (2024.1)
+Requirement already satisfied: sqlparse>=0.2.2 in /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpz5_xex3z/miniconda3/lib/python3.11/site-packages (from Django==4.0) (0.4.4)
+Building wheels for collected packages: Django
+  Building editable for Django (pyproject.toml): started
+  Building editable for Django (pyproject.toml): finished with status 'done'
+  Created wheel for Django: filename=Django-4.0-0.editable-py3-none-any.whl size=25491 sha256=a1efe8541b60c7e63b271f6943ca40141f12559b75bbbf4a2f7e62947c63914e
+  Stored in directory: /private/var/folders/qq/77m5fvhj23759fqt66fmsgpm0000gn/T/pip-ephem-wheel-cache-fygjxlkp/wheels/08/b9/38/c3c00b3e03576c5db5ce2cddc0b966da10194f6068faa13c4f
+Successfully built Django
+Installing collected packages: Django
+  Attempting uninstall: Django
+    Found existing installation: Django 4.0.dev20210421063106
+    Uninstalling Django-4.0.dev20210421063106:
+      Successfully uninstalled Django-4.0.dev20210421063106
+Successfully installed Django-4.0
+
+Std. Error: 
+
+>>>>> Init Succeeded
+>>>>> Applied Patch (test)
+>>>>> Applied Patch (pred_minimal)
+Test Script: source /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpz5_xex3z/miniconda3/bin/activate django__django__4.0 && echo 'activate successful' && ./tests/runtests.py --verbosity 2 backends.sqlite.test_creation;
+Output:
+activate successful
+Testing against Django installed in '/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpftadt5hh/django__django__4.0/django'
+Importing application backends
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+test_custom_test_name (backends.sqlite.test_creation.TestDbSignatureTests.test_custom_test_name) ... ok
+test_get_test_db_clone_settings_name (backends.sqlite.test_creation.TestDbSignatureTests.test_get_test_db_clone_settings_name) ... 
+  test_get_test_db_clone_settings_name (backends.sqlite.test_creation.TestDbSignatureTests.test_get_test_db_clone_settings_name) (test_db_name='test.sqlite3') ... FAIL
+  test_get_test_db_clone_settings_name (backends.sqlite.test_creation.TestDbSignatureTests.test_get_test_db_clone_settings_name) (test_db_name='test') ... FAIL
+
+======================================================================
+FAIL: test_get_test_db_clone_settings_name (backends.sqlite.test_creation.TestDbSignatureTests.test_get_test_db_clone_settings_name) (test_db_name='test.sqlite3')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpftadt5hh/django__django__4.0/tests/backends/sqlite/test_creation.py", line 33, in test_get_test_db_clone_settings_name
+    self.assertEqual(clone_settings_dict['NAME'], expected_clone_name)
+AssertionError: 'test_1..sqlite3' != 'test_1.sqlite3'
+- test_1..sqlite3
+?       -
++ test_1.sqlite3
+
+
+======================================================================
+FAIL: test_get_test_db_clone_settings_name (backends.sqlite.test_creation.TestDbSignatureTests.test_get_test_db_clone_settings_name) (test_db_name='test')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpftadt5hh/django__django__4.0/tests/backends/sqlite/test_creation.py", line 33, in test_get_test_db_clone_settings_name
+    self.assertEqual(clone_settings_dict['NAME'], expected_clone_name)
+AssertionError: 'test_1.' != 'test_1'
+- test_1.
+?       -
++ test_1
+
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (failures=2)
+
+>>>>> Some Tests Failed

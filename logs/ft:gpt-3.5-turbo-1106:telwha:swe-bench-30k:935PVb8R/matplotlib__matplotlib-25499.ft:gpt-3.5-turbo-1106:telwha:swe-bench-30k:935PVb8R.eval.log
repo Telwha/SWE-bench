@@ -1,0 +1,7 @@
+Task Metadata:
+	- Instance ID: matplotlib__matplotlib-25499
+	- Testbed: /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/matplotlib__matplotlib/3.7/tmpnhk5d_wb/matplotlib__matplotlib__3.7
+	- Virtual Env.: matplotlib__matplotlib__3.7
+	- Evaluation Model: ft:gpt-3.5-turbo-1106:telwha:swe-bench-30k:935PVb8R
+>>>>> Applied Patch (pred_try)
+>>>>> Applied Patch (pred_try)

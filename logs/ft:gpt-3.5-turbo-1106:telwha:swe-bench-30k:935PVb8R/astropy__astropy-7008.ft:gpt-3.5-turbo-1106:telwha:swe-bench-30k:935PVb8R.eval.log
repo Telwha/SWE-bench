@@ -1,0 +1,11 @@
+Task Metadata:
+	- Instance ID: astropy__astropy-7008
+	- Testbed: /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/astropy__astropy/1.3/tmp9ox8_4_q/astropy__astropy__1.3
+	- Virtual Env.: astropy__astropy__1.3
+	- Evaluation Model: ft:gpt-3.5-turbo-1106:telwha:swe-bench-30k:935PVb8R
+>>>>> Patch Apply Failed; (pred_try)
+Output:
+error: corrupt patch at line 23
+>>>>> Patch Apply Failed; (pred_minimal_try)
+Output:
+error: patch fragment without header at line 27: @@ -19,1 +19,2 @@

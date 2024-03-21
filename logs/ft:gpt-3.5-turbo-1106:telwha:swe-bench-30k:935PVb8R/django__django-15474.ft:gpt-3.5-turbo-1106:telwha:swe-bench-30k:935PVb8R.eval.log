@@ -1,0 +1,125 @@
+Task Metadata:
+	- Instance ID: django__django-15474
+	- Testbed: /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmpr4athnrl/django__django__4.1
+	- Virtual Env.: django__django__4.1
+	- Evaluation Model: ft:gpt-3.5-turbo-1106:telwha:swe-bench-30k:935PVb8R
+>>>>> Applied Patch (pred_try)
+>>>>> Applied Patch (pred_try)
+Installation Command: source /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmp8mmbn2v7/miniconda3/bin/activate django__django__4.1 && echo 'activate successful' && python -m pip install -e .
+Std. Output: activate successful
+Obtaining file:///Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmpr4athnrl/django__django__4.1
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: asgiref>=3.4.1 in /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmp8mmbn2v7/miniconda3/lib/python3.11/site-packages (from Django==4.1.dev20220307121758) (3.7.2)
+Requirement already satisfied: sqlparse>=0.2.2 in /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmp8mmbn2v7/miniconda3/lib/python3.11/site-packages (from Django==4.1.dev20220307121758) (0.4.4)
+Building wheels for collected packages: Django
+  Building editable for Django (pyproject.toml): started
+  Building editable for Django (pyproject.toml): finished with status 'done'
+  Created wheel for Django: filename=Django-4.1.dev20220307121758-0.editable-py3-none-any.whl size=26829 sha256=2787b5c4bc66786301bfd1cfa49ab00eafbf1b0ac086f7b7ca154ad4ed990b5b
+  Stored in directory: /private/var/folders/qq/77m5fvhj23759fqt66fmsgpm0000gn/T/pip-ephem-wheel-cache-oko3vs31/wheels/88/d9/7b/1f5f6eb84ec89d9f7f466ed5e51299779f2841a26342d4b5c1
+Successfully built Django
+Installing collected packages: Django
+  Attempting uninstall: Django
+    Found existing installation: Django 4.1.dev20220310115719
+    Uninstalling Django-4.1.dev20220310115719:
+      Successfully uninstalled Django-4.1.dev20220310115719
+Successfully installed Django-4.1.dev20220307121758
+
+Std. Error: 
+
+>>>>> Init Succeeded
+>>>>> Applied Patch (test)
+>>>>> Applied Patch (pred)
+Test Script: source /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmp8mmbn2v7/miniconda3/bin/activate django__django__4.1 && echo 'activate successful' && ./tests/runtests.py --verbosity 2 contenttypes_tests.test_migrations;
+Output:
+activate successful
+Testing against Django installed in '/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmpr4athnrl/django__django__4.1/django'
+Importing application contenttypes_tests
+Found 1 test(s).
+Operations to perform:
+  Synchronize unmigrated apps: auth, contenttypes, contenttypes_tests, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table contenttypes_tests_site
+    Creating table contenttypes_tests_author
+    Creating table contenttypes_tests_article
+    Creating table contenttypes_tests_schemeincludedurl
+    Creating table contenttypes_tests_concretemodel
+    Creating table contenttypes_tests_foowithouturl
+    Creating table contenttypes_tests_foowithurl
+    Creating table contenttypes_tests_foowithbrokenabsoluteurl
+    Creating table contenttypes_tests_question
+    Creating table contenttypes_tests_answer
+    Creating table contenttypes_tests_post
+    Creating table contenttypes_tests_modelwithnullfktosite
+    Creating table contenttypes_tests_modelwithm2mtosite
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+Operations to perform:
+  Synchronize unmigrated apps: auth, contenttypes, contenttypes_tests, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table contenttypes_tests_site
+    Creating table contenttypes_tests_author
+    Creating table contenttypes_tests_article
+    Creating table contenttypes_tests_schemeincludedurl
+    Creating table contenttypes_tests_concretemodel
+    Creating table contenttypes_tests_foowithouturl
+    Creating table contenttypes_tests_foowithurl
+    Creating table contenttypes_tests_foowithbrokenabsoluteurl
+    Creating table contenttypes_tests_question
+    Creating table contenttypes_tests_answer
+    Creating table contenttypes_tests_post
+    Creating table contenttypes_tests_modelwithnullfktosite
+    Creating table contenttypes_tests_modelwithm2mtosite
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Creating test database for alias 'other' ('file:memorydb_other?mode=memory&cache=shared')...
+test_add_legacy_name_other_database (contenttypes_tests.test_migrations.MultiDBRemoveContentTypeNameTests.test_add_legacy_name_other_database) ... FAIL
+
+======================================================================
+FAIL: test_add_legacy_name_other_database (contenttypes_tests.test_migrations.MultiDBRemoveContentTypeNameTests.test_add_legacy_name_other_database)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmpr4athnrl/django__django__4.1/tests/contenttypes_tests/test_migrations.py", line 26, in test_add_legacy_name_other_database
+    with self.assertRaises(AttributeError):
+AssertionError: AttributeError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.015s
+
+FAILED (failures=1)
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'other' ('file:memorydb_other?mode=memory&cache=shared')...
+
+>>>>> Some Tests Failed

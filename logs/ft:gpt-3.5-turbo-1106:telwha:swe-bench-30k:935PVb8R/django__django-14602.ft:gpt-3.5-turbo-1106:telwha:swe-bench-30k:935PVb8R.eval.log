@@ -1,0 +1,32 @@
+Task Metadata:
+	- Instance ID: django__django-14602
+	- Testbed: /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpftadt5hh/django__django__4.0
+	- Virtual Env.: django__django__4.0
+	- Evaluation Model: ft:gpt-3.5-turbo-1106:telwha:swe-bench-30k:935PVb8R
+>>>>> Patch Apply Failed; (pred_try)
+Output:
+Checking patch django/utils/dateparse.py...
+error: while searching for:
+    r'(?P<hour>\d{1,2}):(?P<minute>\d{1,2})'
+    r'(?::(?P<second>\d{1,2})(?:[\.,](?P<microsecond>\d{1,6})\d{0,6})?)?'
+)
+# Support the sections of ISO 8601 date representation that are accepted by
+# timedelta
+iso8601_duration_re = _lazy_re_compile(
+    r'(?P<sign>[-+]?)'
+    r'P'
+    r'(?:(?P<days>\d+(.\d+)?)D)?'
+
+error: patch failed: django/utils/dateparse.py:16
+error: django/utils/dateparse.py: patch does not apply
+>>>>> Patch Apply Failed; (pred_minimal_try)
+Output:
+Checking patch django/utils/dateparse.py...
+error: while searching for:
+# Support the sections of ISO 8601 date representation that are accepted by
+# timedelta
+iso8601_duration_re = _lazy_re_compile(
+    r'(?P<sign>[-+]?)'
+
+error: patch failed: django/utils/dateparse.py:19
+error: django/utils/dateparse.py: patch does not apply

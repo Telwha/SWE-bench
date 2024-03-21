@@ -1,0 +1,21 @@
+Task Metadata:
+	- Instance ID: django__django-15370
+	- Testbed: /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmpr4athnrl/django__django__4.1
+	- Virtual Env.: django__django__4.1
+	- Evaluation Model: ft:gpt-3.5-turbo-1106:telwha:swe-bench-30k:935PVb8R
+>>>>> Patch Apply Failed; (pred_try)
+Output:
+Checking patch django/utils/safestring.py...
+error: while searching for:
+
+from functools import wraps
+
+class SafeData:
+    def __html__(self):
+        """
+
+error: patch failed: django/utils/safestring.py:8
+error: django/utils/safestring.py: patch does not apply
+>>>>> Patch Apply Failed; (pred_minimal_try)
+Output:
+error: patch fragment without header at line 9: @@ -46,1 +48,2 @@

@@ -1,0 +1,28 @@
+Task Metadata:
+	- Instance ID: pytest-dev__pytest-6680
+	- Testbed: /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/pytest-dev__pytest/5.3/tmpzutuqxgc/pytest-dev__pytest__5.3
+	- Virtual Env.: pytest-dev__pytest__5.3
+	- Evaluation Model: ft:gpt-3.5-turbo-1106:telwha:swe-bench-30k:935PVb8R
+>>>>> Patch Apply Failed; (pred_try)
+Output:
+Checking patch src/_pytest/deprecated.py...
+error: while searching for:
+"Passing arguments to pytest.fixture() as positional arguments is deprecated - pass them "
+"as a keyword argument instead."
+)
+NODE_USE_FROM_PARENT = UnformattedWarning(
+    "direct construction of {name} has been deprecated, please use {name}.from_parent",
+)
+
+
+error: patch failed: src/_pytest/deprecated.py:35
+error: src/_pytest/deprecated.py: patch does not apply
+>>>>> Patch Apply Failed; (pred_minimal_try)
+Output:
+Checking patch src/_pytest/deprecated.py...
+error: while searching for:
+NODE_USE_FROM_PARENT = UnformattedWarning(
+    "direct construction of {name} has been deprecated, please use {name}.from_parent",
+
+error: patch failed: src/_pytest/deprecated.py:38
+error: src/_pytest/deprecated.py: patch does not apply

@@ -1,0 +1,7 @@
+Task Metadata:
+	- Instance ID: sphinx-doc__sphinx-8719
+	- Testbed: /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/sphinx-doc__sphinx/3.5/tmpi61qyay7/sphinx-doc__sphinx__3.5
+	- Virtual Env.: sphinx-doc__sphinx__3.5
+	- Evaluation Model: ft:gpt-3.5-turbo-1106:telwha:swe-bench-30k:935PVb8R
+>>>>> Applied Patch (pred_try)
+>>>>> Applied Patch (pred_try)

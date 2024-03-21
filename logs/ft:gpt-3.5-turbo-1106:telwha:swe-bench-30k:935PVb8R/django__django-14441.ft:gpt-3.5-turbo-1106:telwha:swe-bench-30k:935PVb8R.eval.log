@@ -1,0 +1,22 @@
+Task Metadata:
+	- Instance ID: django__django-14441
+	- Testbed: /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpftadt5hh/django__django__4.0
+	- Virtual Env.: django__django__4.0
+	- Evaluation Model: ft:gpt-3.5-turbo-1106:telwha:swe-bench-30k:935PVb8R
+>>>>> Patch Apply Failed; (pred_try)
+Output:
+Checking patch django/core/files/images.py...
+error: while searching for:
+    'state.'
+    """
+    from PIL import ImageFile as PillowImageFile
+    from django.core.files.utils import FileProxyMixin
+
+    p = PillowImageFile.Parser()
+    if hasattr(file_or_path, 'read'):
+
+error: patch failed: django/core/files/images.py:36
+error: django/core/files/images.py: patch does not apply
+>>>>> Patch Apply Failed; (pred_minimal_try)
+Output:
+error: patch fragment without header at line 7: @@ -50,2 +50,2 @@

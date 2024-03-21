@@ -1,0 +1,187 @@
+Task Metadata:
+	- Instance ID: django__django-15204
+	- Testbed: /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmpr4athnrl/django__django__4.1
+	- Virtual Env.: django__django__4.1
+	- Evaluation Model: ft:gpt-3.5-turbo-1106:telwha:swe-bench-30k:935PVb8R
+>>>>> Patch Apply Failed; (pred_try)
+Output:
+Checking patch django/utils/dateparse.py...
+error: while searching for:
+        kw = {k: float(v.replace(',', '.')) for k, v in kw.items() if v is not None}
+        days = datetime.timedelta(kw.pop('days', .0) or .0)
+        if match.re == iso8601_duration_re:
+            days *= sign
+        return days + sign * datetime.timedelta(**kw)
+
+
+
+error: patch failed: django/utils/dateparse.py:146
+error: django/utils/dateparse.py: patch does not apply
+>>>>> Applied Patch (pred_minimal_try)
+>>>>> Applied Patch (pred_minimal_try)
+Installation Command: source /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmp8mmbn2v7/miniconda3/bin/activate django__django__4.1 && echo 'activate successful' && python -m pip install -e .
+Std. Output: activate successful
+Obtaining file:///Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmpr4athnrl/django__django__4.1
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: asgiref>=3.4.1 in /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmp8mmbn2v7/miniconda3/lib/python3.11/site-packages (from Django==4.1.dev20211217120704) (3.7.2)
+Requirement already satisfied: sqlparse>=0.2.2 in /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmp8mmbn2v7/miniconda3/lib/python3.11/site-packages (from Django==4.1.dev20211217120704) (0.4.4)
+Building wheels for collected packages: Django
+  Building editable for Django (pyproject.toml): started
+  Building editable for Django (pyproject.toml): finished with status 'done'
+  Created wheel for Django: filename=Django-4.1.dev20211217120704-0.editable-py3-none-any.whl size=26781 sha256=0b8ac4e1b5ef19c691de9c2e9be1a59280ac241f48cff6732c13ffefe3285f1f
+  Stored in directory: /private/var/folders/qq/77m5fvhj23759fqt66fmsgpm0000gn/T/pip-ephem-wheel-cache-j1ulbknv/wheels/88/d9/7b/1f5f6eb84ec89d9f7f466ed5e51299779f2841a26342d4b5c1
+Successfully built Django
+Installing collected packages: Django
+  Attempting uninstall: Django
+    Found existing installation: Django 4.1.dev20211216071113
+    Uninstalling Django-4.1.dev20211216071113:
+      Successfully uninstalled Django-4.1.dev20211216071113
+Successfully installed Django-4.1.dev20211217120704
+
+Std. Error: 
+
+>>>>> Init Succeeded
+>>>>> Applied Patch (test)
+>>>>> Applied Patch (pred_minimal)
+Test Script: source /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmp8mmbn2v7/miniconda3/bin/activate django__django__4.1 && echo 'activate successful' && ./tests/runtests.py --verbosity 2 forms_tests.field_tests.test_durationfield utils_tests.test_dateparse;
+Output:
+activate successful
+Testing against Django installed in '/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmpr4athnrl/django__django__4.1/django'
+Importing application forms_tests
+Importing application utils_tests
+Found 19 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+test_durationfield_clean (forms_tests.field_tests.test_durationfield.DurationFieldTest.test_durationfield_clean) ... ERROR
+test_durationfield_clean_not_required (forms_tests.field_tests.test_durationfield.DurationFieldTest.test_durationfield_clean_not_required) ... ok
+test_durationfield_integer_value (forms_tests.field_tests.test_durationfield.DurationFieldTest.test_durationfield_integer_value) ... ok
+test_durationfield_prepare_value (forms_tests.field_tests.test_durationfield.DurationFieldTest.test_durationfield_prepare_value) ... ok
+test_durationfield_render (forms_tests.field_tests.test_durationfield.DurationFieldTest.test_durationfield_render) ... ok
+test_overflow (forms_tests.field_tests.test_durationfield.DurationFieldTest.test_overflow) ... ok
+test_overflow_translation (forms_tests.field_tests.test_durationfield.DurationFieldTest.test_overflow_translation) ... ok
+test_parse_date (utils_tests.test_dateparse.DateParseTests.test_parse_date) ... FAIL
+test_parse_datetime (utils_tests.test_dateparse.DateParseTests.test_parse_datetime) ... ok
+test_parse_time (utils_tests.test_dateparse.DateParseTests.test_parse_time) ... FAIL
+test_days (utils_tests.test_dateparse.DurationParseTests.test_days) ... ok
+test_fractions_of_seconds (utils_tests.test_dateparse.DurationParseTests.test_fractions_of_seconds) ... ok
+test_hours_minutes_seconds (utils_tests.test_dateparse.DurationParseTests.test_hours_minutes_seconds) ... ok
+test_iso_8601 (utils_tests.test_dateparse.DurationParseTests.test_iso_8601) ... 
+  test_iso_8601 (utils_tests.test_dateparse.DurationParseTests.test_iso_8601) (source='P3(3D') ... ERROR
+  test_iso_8601 (utils_tests.test_dateparse.DurationParseTests.test_iso_8601) (source='PT3)3H') ... ERROR
+  test_iso_8601 (utils_tests.test_dateparse.DurationParseTests.test_iso_8601) (source='PT3|3M') ... ERROR
+  test_iso_8601 (utils_tests.test_dateparse.DurationParseTests.test_iso_8601) (source='PT3/3S') ... ERROR
+test_minutes_seconds (utils_tests.test_dateparse.DurationParseTests.test_minutes_seconds) ... ok
+test_negative (utils_tests.test_dateparse.DurationParseTests.test_negative) ... ok
+test_parse_postgresql_format (utils_tests.test_dateparse.DurationParseTests.test_parse_postgresql_format) ... ok
+test_parse_python_format (utils_tests.test_dateparse.DurationParseTests.test_parse_python_format) ... ok
+test_seconds (utils_tests.test_dateparse.DurationParseTests.test_seconds) ... ok
+
+======================================================================
+ERROR: test_durationfield_clean (forms_tests.field_tests.test_durationfield.DurationFieldTest.test_durationfield_clean)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmpr4athnrl/django__django__4.1/tests/forms_tests/field_tests/test_durationfield.py", line 34, in test_durationfield_clean
+    DurationField().clean('P3(3D')
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmpr4athnrl/django__django__4.1/django/forms/fields.py", line 149, in clean
+    value = self.to_python(value)
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmpr4athnrl/django__django__4.1/django/forms/fields.py", line 502, in to_python
+    value = parse_duration(str(value))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmpr4athnrl/django__django__4.1/django/utils/dateparse.py", line 154, in parse_duration
+    kw = {k: float(v.replace(',', '.')) for k, v in kw.items() if v is not None}
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmpr4athnrl/django__django__4.1/django/utils/dateparse.py", line 154, in <dictcomp>
+    kw = {k: float(v.replace(',', '.')) for k, v in kw.items() if v is not None}
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '3(3'
+
+======================================================================
+ERROR: test_iso_8601 (utils_tests.test_dateparse.DurationParseTests.test_iso_8601) (source='P3(3D')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmpr4athnrl/django__django__4.1/tests/utils_tests/test_dateparse.py", line 172, in test_iso_8601
+    self.assertEqual(parse_duration(source), expected)
+                     ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmpr4athnrl/django__django__4.1/django/utils/dateparse.py", line 154, in parse_duration
+    kw = {k: float(v.replace(',', '.')) for k, v in kw.items() if v is not None}
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmpr4athnrl/django__django__4.1/django/utils/dateparse.py", line 154, in <dictcomp>
+    kw = {k: float(v.replace(',', '.')) for k, v in kw.items() if v is not None}
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '3(3'
+
+======================================================================
+ERROR: test_iso_8601 (utils_tests.test_dateparse.DurationParseTests.test_iso_8601) (source='PT3)3H')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmpr4athnrl/django__django__4.1/tests/utils_tests/test_dateparse.py", line 172, in test_iso_8601
+    self.assertEqual(parse_duration(source), expected)
+                     ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmpr4athnrl/django__django__4.1/django/utils/dateparse.py", line 154, in parse_duration
+    kw = {k: float(v.replace(',', '.')) for k, v in kw.items() if v is not None}
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmpr4athnrl/django__django__4.1/django/utils/dateparse.py", line 154, in <dictcomp>
+    kw = {k: float(v.replace(',', '.')) for k, v in kw.items() if v is not None}
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '3)3'
+
+======================================================================
+ERROR: test_iso_8601 (utils_tests.test_dateparse.DurationParseTests.test_iso_8601) (source='PT3|3M')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmpr4athnrl/django__django__4.1/tests/utils_tests/test_dateparse.py", line 172, in test_iso_8601
+    self.assertEqual(parse_duration(source), expected)
+                     ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmpr4athnrl/django__django__4.1/django/utils/dateparse.py", line 154, in parse_duration
+    kw = {k: float(v.replace(',', '.')) for k, v in kw.items() if v is not None}
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmpr4athnrl/django__django__4.1/django/utils/dateparse.py", line 154, in <dictcomp>
+    kw = {k: float(v.replace(',', '.')) for k, v in kw.items() if v is not None}
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '3|3'
+
+======================================================================
+ERROR: test_iso_8601 (utils_tests.test_dateparse.DurationParseTests.test_iso_8601) (source='PT3/3S')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmpr4athnrl/django__django__4.1/tests/utils_tests/test_dateparse.py", line 172, in test_iso_8601
+    self.assertEqual(parse_duration(source), expected)
+                     ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmpr4athnrl/django__django__4.1/django/utils/dateparse.py", line 154, in parse_duration
+    kw = {k: float(v.replace(',', '.')) for k, v in kw.items() if v is not None}
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmpr4athnrl/django__django__4.1/django/utils/dateparse.py", line 154, in <dictcomp>
+    kw = {k: float(v.replace(',', '.')) for k, v in kw.items() if v is not None}
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '3/3'
+
+======================================================================
+FAIL: test_parse_date (utils_tests.test_dateparse.DateParseTests.test_parse_date)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmpr4athnrl/django__django__4.1/tests/utils_tests/test_dateparse.py", line 17, in test_parse_date
+    self.assertIsNone(parse_date('20120423'))
+AssertionError: datetime.date(2012, 4, 23) is not None
+
+======================================================================
+FAIL: test_parse_time (utils_tests.test_dateparse.DateParseTests.test_parse_time)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.1/tmpr4athnrl/django__django__4.1/tests/utils_tests/test_dateparse.py", line 36, in test_parse_time
+    self.assertIsNone(parse_time('091500'))
+AssertionError: datetime.time(9, 15) is not None
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.012s
+
+FAILED (failures=2, errors=5)
+
+>>>>> Some Tests Failed

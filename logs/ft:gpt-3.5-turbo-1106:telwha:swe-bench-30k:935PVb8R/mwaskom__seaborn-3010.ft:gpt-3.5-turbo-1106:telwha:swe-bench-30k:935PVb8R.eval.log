@@ -1,0 +1,142 @@
+Task Metadata:
+	- Instance ID: mwaskom__seaborn-3010
+	- Testbed: /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/mwaskom__seaborn/0.12/tmpf_65bm3f/mwaskom__seaborn__0.12
+	- Virtual Env.: mwaskom__seaborn__0.12
+	- Evaluation Model: ft:gpt-3.5-turbo-1106:telwha:swe-bench-30k:935PVb8R
+>>>>> Applied Patch (pred_try)
+>>>>> Applied Patch (pred_try)
+Installation Command: source /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/mwaskom__seaborn/0.12/tmpsazkbm2q/miniconda3/bin/activate mwaskom__seaborn__0.12 && echo 'activate successful' && pip install -e .[dev]
+Std. Output: activate successful
+Obtaining file:///Users/abhinav/Documents/SWE-bench/testbed/c66a181850/mwaskom__seaborn/0.12/tmpf_65bm3f/mwaskom__seaborn__0.12
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Collecting numpy>=1.17
+  Using cached numpy-1.26.4-cp311-cp311-macosx_11_0_arm64.whl.metadata (114 kB)
+Collecting pandas>=0.25
+  Using cached pandas-2.2.1-cp311-cp311-macosx_11_0_arm64.whl.metadata (19 kB)
+Collecting matplotlib>=3.1
+  Using cached matplotlib-3.8.3-cp311-cp311-macosx_11_0_arm64.whl.metadata (5.8 kB)
+Collecting pytest
+  Using cached pytest-8.1.1-py3-none-any.whl.metadata (7.6 kB)
+Collecting pytest-cov
+  Using cached pytest_cov-4.1.0-py3-none-any.whl.metadata (26 kB)
+Collecting pytest-xdist
+  Using cached pytest_xdist-3.5.0-py3-none-any.whl.metadata (3.1 kB)
+Collecting flake8
+  Using cached flake8-7.0.0-py2.py3-none-any.whl.metadata (3.8 kB)
+Collecting mypy
+  Using cached mypy-1.9.0-cp311-cp311-macosx_11_0_arm64.whl.metadata (1.9 kB)
+Collecting contourpy>=1.0.1 (from matplotlib>=3.1)
+  Using cached contourpy-1.2.0-cp311-cp311-macosx_11_0_arm64.whl.metadata (5.8 kB)
+Collecting cycler>=0.10 (from matplotlib>=3.1)
+  Using cached cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools>=4.22.0 (from matplotlib>=3.1)
+  Using cached fonttools-4.50.0-cp311-cp311-macosx_10_9_universal2.whl.metadata (159 kB)
+Collecting kiwisolver>=1.3.1 (from matplotlib>=3.1)
+  Using cached kiwisolver-1.4.5-cp311-cp311-macosx_11_0_arm64.whl.metadata (6.4 kB)
+Requirement already satisfied: packaging>=20.0 in /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/mwaskom__seaborn/0.12/tmpsazkbm2q/miniconda3/lib/python3.11/site-packages (from matplotlib>=3.1) (23.1)
+Collecting pillow>=8 (from matplotlib>=3.1)
+  Using cached pillow-10.2.0-cp311-cp311-macosx_11_0_arm64.whl.metadata (9.7 kB)
+Collecting pyparsing>=2.3.1 (from matplotlib>=3.1)
+  Using cached pyparsing-3.1.2-py3-none-any.whl.metadata (5.1 kB)
+Collecting python-dateutil>=2.7 (from matplotlib>=3.1)
+  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting pytz>=2020.1 (from pandas>=0.25)
+  Using cached pytz-2024.1-py2.py3-none-any.whl.metadata (22 kB)
+Collecting tzdata>=2022.7 (from pandas>=0.25)
+  Using cached tzdata-2024.1-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting mccabe<0.8.0,>=0.7.0 (from flake8)
+  Using cached mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
+Collecting pycodestyle<2.12.0,>=2.11.0 (from flake8)
+  Using cached pycodestyle-2.11.1-py2.py3-none-any.whl.metadata (4.5 kB)
+Collecting pyflakes<3.3.0,>=3.2.0 (from flake8)
+  Using cached pyflakes-3.2.0-py2.py3-none-any.whl.metadata (3.5 kB)
+Collecting typing-extensions>=4.1.0 (from mypy)
+  Using cached typing_extensions-4.10.0-py3-none-any.whl.metadata (3.0 kB)
+Collecting mypy-extensions>=1.0.0 (from mypy)
+  Using cached mypy_extensions-1.0.0-py3-none-any.whl.metadata (1.1 kB)
+Collecting iniconfig (from pytest)
+  Using cached iniconfig-2.0.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting pluggy<2.0,>=1.4 (from pytest)
+  Using cached pluggy-1.4.0-py3-none-any.whl.metadata (4.3 kB)
+Collecting coverage>=5.2.1 (from coverage[toml]>=5.2.1->pytest-cov)
+  Using cached coverage-7.4.4-cp311-cp311-macosx_11_0_arm64.whl.metadata (8.2 kB)
+Collecting execnet>=1.1 (from pytest-xdist)
+  Using cached execnet-2.0.2-py3-none-any.whl.metadata (2.9 kB)
+Collecting six>=1.5 (from python-dateutil>=2.7->matplotlib>=3.1)
+  Using cached six-1.16.0-py2.py3-none-any.whl.metadata (1.8 kB)
+Using cached matplotlib-3.8.3-cp311-cp311-macosx_11_0_arm64.whl (7.5 MB)
+Using cached numpy-1.26.4-cp311-cp311-macosx_11_0_arm64.whl (14.0 MB)
+Using cached pandas-2.2.1-cp311-cp311-macosx_11_0_arm64.whl (11.3 MB)
+Using cached flake8-7.0.0-py2.py3-none-any.whl (57 kB)
+Using cached mypy-1.9.0-cp311-cp311-macosx_11_0_arm64.whl (9.8 MB)
+Using cached pytest-8.1.1-py3-none-any.whl (337 kB)
+Using cached pytest_cov-4.1.0-py3-none-any.whl (21 kB)
+Using cached pytest_xdist-3.5.0-py3-none-any.whl (42 kB)
+Using cached contourpy-1.2.0-cp311-cp311-macosx_11_0_arm64.whl (243 kB)
+Using cached coverage-7.4.4-cp311-cp311-macosx_11_0_arm64.whl (206 kB)
+Using cached cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Using cached execnet-2.0.2-py3-none-any.whl (37 kB)
+Using cached fonttools-4.50.0-cp311-cp311-macosx_10_9_universal2.whl (2.8 MB)
+Using cached kiwisolver-1.4.5-cp311-cp311-macosx_11_0_arm64.whl (66 kB)
+Using cached mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+Using cached mypy_extensions-1.0.0-py3-none-any.whl (4.7 kB)
+Using cached pillow-10.2.0-cp311-cp311-macosx_11_0_arm64.whl (3.3 MB)
+Using cached pluggy-1.4.0-py3-none-any.whl (20 kB)
+Using cached pycodestyle-2.11.1-py2.py3-none-any.whl (31 kB)
+Using cached pyflakes-3.2.0-py2.py3-none-any.whl (62 kB)
+Using cached pyparsing-3.1.2-py3-none-any.whl (103 kB)
+Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Using cached pytz-2024.1-py2.py3-none-any.whl (505 kB)
+Using cached typing_extensions-4.10.0-py3-none-any.whl (33 kB)
+Using cached tzdata-2024.1-py2.py3-none-any.whl (345 kB)
+Using cached iniconfig-2.0.0-py3-none-any.whl (5.9 kB)
+Using cached six-1.16.0-py2.py3-none-any.whl (11 kB)
+Checking if build backend supports build_editable: started
+Checking if build backend supports build_editable: finished with status 'done'
+Building wheels for collected packages: seaborn
+  Building editable for seaborn (pyproject.toml): started
+  Building editable for seaborn (pyproject.toml): finished with status 'done'
+  Created wheel for seaborn: filename=seaborn-0.12.1.dev0-py3-none-any.whl size=4001 sha256=af6b9abb35387f0c5c22c4e454a0870c53a6d1543f5184483bd96ab1ef9d962a
+  Stored in directory: /private/var/folders/qq/77m5fvhj23759fqt66fmsgpm0000gn/T/pip-ephem-wheel-cache-gwnfahjr/wheels/2f/2b/6c/36bd8418a39fd3709efbb1de882583bd7932778e4ca94347c3
+Successfully built seaborn
+Installing collected packages: pytz, tzdata, typing-extensions, six, pyparsing, pyflakes, pycodestyle, pluggy, pillow, numpy, mypy-extensions, mccabe, kiwisolver, iniconfig, fonttools, execnet, cycler, coverage, python-dateutil, pytest, mypy, flake8, contourpy, pytest-xdist, pytest-cov, pandas, matplotlib, seaborn
+  Attempting uninstall: pluggy
+    Found existing installation: pluggy 1.0.0
+    Uninstalling pluggy-1.0.0:
+      Successfully uninstalled pluggy-1.0.0
+Successfully installed contourpy-1.2.0 coverage-7.4.4 cycler-0.12.1 execnet-2.0.2 flake8-7.0.0 fonttools-4.50.0 iniconfig-2.0.0 kiwisolver-1.4.5 matplotlib-3.8.3 mccabe-0.7.0 mypy-1.9.0 mypy-extensions-1.0.0 numpy-1.26.4 pandas-2.2.1 pillow-10.2.0 pluggy-1.4.0 pycodestyle-2.11.1 pyflakes-3.2.0 pyparsing-3.1.2 pytest-8.1.1 pytest-cov-4.1.0 pytest-xdist-3.5.0 python-dateutil-2.9.0.post0 pytz-2024.1 seaborn-0.12.1.dev0 six-1.16.0 typing-extensions-4.10.0 tzdata-2024.1
+
+Std. Error: 
+
+>>>>> Init Succeeded
+>>>>> Applied Patch (test)
+>>>>> Applied Patch (pred)
+Test Script: source /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/mwaskom__seaborn/0.12/tmpsazkbm2q/miniconda3/bin/activate mwaskom__seaborn__0.12 && echo 'activate successful' && pytest --no-header -rA tests/_stats/test_regression.py;
+Output:
+activate successful
+============================= test session starts ==============================
+collected 3 items
+
+tests/_stats/test_regression.py ...                                      [100%]
+
+=============================== warnings summary ===============================
+tests/_stats/test_regression.py::TestPolyFit::test_one_grouper
+  /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/mwaskom__seaborn/0.12/tmpf_65bm3f/mwaskom__seaborn__0.12/seaborn/_core/rules.py:66: DeprecationWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, pd.CategoricalDtype) instead
+    if pd.api.types.is_categorical_dtype(vector):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/_stats/test_regression.py::TestPolyFit::test_no_grouper
+PASSED tests/_stats/test_regression.py::TestPolyFit::test_one_grouper
+PASSED tests/_stats/test_regression.py::TestPolyFit::test_missing_data
+========================= 3 passed, 1 warning in 0.34s =========================
+
+>>>>> All Tests Passed

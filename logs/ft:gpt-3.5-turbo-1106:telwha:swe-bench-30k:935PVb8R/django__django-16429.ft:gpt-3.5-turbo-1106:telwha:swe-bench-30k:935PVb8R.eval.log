@@ -1,0 +1,1266 @@
+Task Metadata:
+	- Instance ID: django__django-16429
+	- Testbed: /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2
+	- Virtual Env.: django__django__4.2
+	- Evaluation Model: ft:gpt-3.5-turbo-1106:telwha:swe-bench-30k:935PVb8R
+>>>>> Applied Patch (pred_try)
+>>>>> Applied Patch (pred_try)
+Installation Command: source /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/bin/activate django__django__4.2 && echo 'activate successful' && python -m pip install -e .
+Std. Output: activate successful
+Obtaining file:///Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Installing backend dependencies: started
+  Installing backend dependencies: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: asgiref>=3.6.0 in /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/site-packages (from Django==4.2.dev20230105115528) (3.7.2)
+Requirement already satisfied: sqlparse>=0.2.2 in /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/site-packages (from Django==4.2.dev20230105115528) (0.4.4)
+Building wheels for collected packages: Django
+  Building editable for Django (pyproject.toml): started
+  Building editable for Django (pyproject.toml): finished with status 'done'
+  Created wheel for Django: filename=Django-4.2.dev20230105115528-0.editable-py3-none-any.whl size=27246 sha256=77dc0d28d1615f92de9ea1200f535d3f4cfdc8323dfb52ecf34a80356545c42f
+  Stored in directory: /private/var/folders/qq/77m5fvhj23759fqt66fmsgpm0000gn/T/pip-ephem-wheel-cache-p5t_g6oe/wheels/40/77/ef/4165eaf5cd3119e0ec2fadeb16ce7b0d5330d8ed5a96653827
+Successfully built Django
+Installing collected packages: Django
+Successfully installed Django-4.2.dev20230105115528
+
+Std. Error: 
+
+>>>>> Init Succeeded
+>>>>> Applied Patch (test)
+>>>>> Applied Patch (pred)
+Test Script: source /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/bin/activate django__django__4.2 && echo 'activate successful' && ./tests/runtests.py --verbosity 2 utils_tests.test_timesince;
+Output:
+activate successful
+Testing against Django installed in '/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django' with up to 8 processes
+Importing application utils_tests
+Found 34 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, contenttypes, messages, sessions, staticfiles, utils_tests
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table utils_tests_category
+    Creating table utils_tests_categoryinfo
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+Importing application utils_tests
+Importing application utils_tests
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_both_date_objects (utils_tests.test_timesince.TZAwareTimesinceTests.test_both_date_objects)
+Timesince should work with both date objects (#9672) ... ok
+test_date_objects (utils_tests.test_timesince.TZAwareTimesinceTests.test_date_objects)
+Both timesince and timeuntil should work on date objects (#17937). ... ok
+test_depth (utils_tests.test_timesince.TZAwareTimesinceTests.test_depth) ... 
+  test_depth (utils_tests.test_timesince.TZAwareTimesinceTests.test_depth) [<object object at 0x100c32680>] ... ERROR
+  test_depth (utils_tests.test_timesince.TZAwareTimesinceTests.test_depth) [<object object at 0x100c32680>] ... ERROR
+  test_depth (utils_tests.test_timesince.TZAwareTimesinceTests.test_depth) [<object object at 0x100c32680>] ... ERROR
+  test_depth (utils_tests.test_timesince.TZAwareTimesinceTests.test_depth) [<object object at 0x100c32680>] ... ERROR
+  test_depth (utils_tests.test_timesince.TZAwareTimesinceTests.test_depth) [<object object at 0x100c32680>] ... ERROR
+  test_depth (utils_tests.test_timesince.TZAwareTimesinceTests.test_depth) [<object object at 0x100c32680>] ... ERROR
+  test_depth (utils_tests.test_timesince.TZAwareTimesinceTests.test_depth) [<object object at 0x100c32680>] ... ERROR
+  test_depth (utils_tests.test_timesince.TZAwareTimesinceTests.test_depth) [<object object at 0x100c32680>] ... ERROR
+  test_depth (utils_tests.test_timesince.TZAwareTimesinceTests.test_depth) [<object object at 0x100c32680>] ... ERROR
+test_depth_invalid (utils_tests.test_timesince.TZAwareTimesinceTests.test_depth_invalid) ... ok
+test_different_timezones (utils_tests.test_timesince.TZAwareTimesinceTests.test_different_timezones)
+When using two different timezones. ... ok
+test_display_first_unit (utils_tests.test_timesince.TZAwareTimesinceTests.test_display_first_unit)
+If the two differing units aren't adjacent, only the first unit is ... ok
+test_display_second_before_first (utils_tests.test_timesince.TZAwareTimesinceTests.test_display_second_before_first)
+When the second date occurs before the first, we should always ... ok
+test_equal_datetimes (utils_tests.test_timesince.TZAwareTimesinceTests.test_equal_datetimes)
+equal datetimes. ... ok
+test_ignore_microseconds_and_seconds (utils_tests.test_timesince.TZAwareTimesinceTests.test_ignore_microseconds_and_seconds)
+Microseconds and seconds are ignored. ... ok
+test_leap_year (utils_tests.test_timesince.TZAwareTimesinceTests.test_leap_year) ... ok
+test_leap_year_new_years_eve (utils_tests.test_timesince.TZAwareTimesinceTests.test_leap_year_new_years_eve) ... ok
+test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) ... 
+  test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>] ... ERROR
+test_multiple_units (utils_tests.test_timesince.TZAwareTimesinceTests.test_multiple_units)
+Test multiple units. ... ok
+test_naive_datetime_with_tzinfo_attribute (utils_tests.test_timesince.TZAwareTimesinceTests.test_naive_datetime_with_tzinfo_attribute) ... ok
+test_other_units (utils_tests.test_timesince.TZAwareTimesinceTests.test_other_units)
+Test other units. ... ERROR
+test_second_before_equal_first_humanize_time_strings (utils_tests.test_timesince.TZAwareTimesinceTests.test_second_before_equal_first_humanize_time_strings) ... ok
+test_thousand_years_ago (utils_tests.test_timesince.TZAwareTimesinceTests.test_thousand_years_ago) ... ERROR
+test_both_date_objects (utils_tests.test_timesince.TimesinceTests.test_both_date_objects)
+Timesince should work with both date objects (#9672) ... ok
+test_date_objects (utils_tests.test_timesince.TimesinceTests.test_date_objects)
+Both timesince and timeuntil should work on date objects (#17937). ... ok
+test_depth (utils_tests.test_timesince.TimesinceTests.test_depth) ... 
+  test_depth (utils_tests.test_timesince.TimesinceTests.test_depth) [<object object at 0x100c326d0>] ... ERROR
+  test_depth (utils_tests.test_timesince.TimesinceTests.test_depth) [<object object at 0x100c326d0>] ... ERROR
+  test_depth (utils_tests.test_timesince.TimesinceTests.test_depth) [<object object at 0x100c326d0>] ... ERROR
+  test_depth (utils_tests.test_timesince.TimesinceTests.test_depth) [<object object at 0x100c326d0>] ... ERROR
+  test_depth (utils_tests.test_timesince.TimesinceTests.test_depth) [<object object at 0x100c326d0>] ... ERROR
+  test_depth (utils_tests.test_timesince.TimesinceTests.test_depth) [<object object at 0x100c326d0>] ... ERROR
+  test_depth (utils_tests.test_timesince.TimesinceTests.test_depth) [<object object at 0x100c326d0>] ... ERROR
+  test_depth (utils_tests.test_timesince.TimesinceTests.test_depth) [<object object at 0x100c326d0>] ... ERROR
+  test_depth (utils_tests.test_timesince.TimesinceTests.test_depth) [<object object at 0x100c326d0>] ... ERROR
+test_depth_invalid (utils_tests.test_timesince.TimesinceTests.test_depth_invalid) ... ok
+test_different_timezones (utils_tests.test_timesince.TimesinceTests.test_different_timezones)
+When using two different timezones. ... ok
+test_display_first_unit (utils_tests.test_timesince.TimesinceTests.test_display_first_unit)
+If the two differing units aren't adjacent, only the first unit is ... ok
+test_display_second_before_first (utils_tests.test_timesince.TimesinceTests.test_display_second_before_first)
+When the second date occurs before the first, we should always ... ok
+test_equal_datetimes (utils_tests.test_timesince.TimesinceTests.test_equal_datetimes)
+equal datetimes. ... ok
+test_ignore_microseconds_and_seconds (utils_tests.test_timesince.TimesinceTests.test_ignore_microseconds_and_seconds)
+Microseconds and seconds are ignored. ... ok
+test_leap_year (utils_tests.test_timesince.TimesinceTests.test_leap_year) ... ok
+test_leap_year_new_years_eve (utils_tests.test_timesince.TimesinceTests.test_leap_year_new_years_eve) ... ok
+test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) ... 
+  test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>] ... ERROR
+  test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>] ... ERROR
+test_multiple_units (utils_tests.test_timesince.TimesinceTests.test_multiple_units)
+Test multiple units. ... ok
+test_naive_datetime_with_tzinfo_attribute (utils_tests.test_timesince.TimesinceTests.test_naive_datetime_with_tzinfo_attribute) ... ok
+test_other_units (utils_tests.test_timesince.TimesinceTests.test_other_units)
+Test other units. ... ERROR
+test_second_before_equal_first_humanize_time_strings (utils_tests.test_timesince.TimesinceTests.test_second_before_equal_first_humanize_time_strings) ... ok
+test_thousand_years_ago (utils_tests.test_timesince.TimesinceTests.test_thousand_years_ago) ... ERROR
+
+======================================================================
+ERROR: test_depth (utils_tests.test_timesince.TZAwareTimesinceTests.test_depth) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 205, in test_depth
+    self.assertEqual(timesince(self.t, value, depth=depth), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_depth (utils_tests.test_timesince.TZAwareTimesinceTests.test_depth) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 205, in test_depth
+    self.assertEqual(timesince(self.t, value, depth=depth), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_depth (utils_tests.test_timesince.TZAwareTimesinceTests.test_depth) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 205, in test_depth
+    self.assertEqual(timesince(self.t, value, depth=depth), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_depth (utils_tests.test_timesince.TZAwareTimesinceTests.test_depth) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 205, in test_depth
+    self.assertEqual(timesince(self.t, value, depth=depth), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_depth (utils_tests.test_timesince.TZAwareTimesinceTests.test_depth) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 205, in test_depth
+    self.assertEqual(timesince(self.t, value, depth=depth), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_depth (utils_tests.test_timesince.TZAwareTimesinceTests.test_depth) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 205, in test_depth
+    self.assertEqual(timesince(self.t, value, depth=depth), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_depth (utils_tests.test_timesince.TZAwareTimesinceTests.test_depth) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 205, in test_depth
+    self.assertEqual(timesince(self.t, value, depth=depth), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_depth (utils_tests.test_timesince.TZAwareTimesinceTests.test_depth) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 205, in test_depth
+    self.assertEqual(timesince(self.t, value, depth=depth), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_depth (utils_tests.test_timesince.TZAwareTimesinceTests.test_depth) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 205, in test_depth
+    self.assertEqual(timesince(self.t, value, depth=depth), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TZAwareTimesinceTests.test_months_edge) [<object object at 0x100c32680>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_other_units (utils_tests.test_timesince.TZAwareTimesinceTests.test_other_units)
+Test other units.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 623, in run
+    self._callTestMethod(testMethod)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 579, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 40, in test_other_units
+    self.assertEqual(timesince(self.t, self.t + self.onemonth), "1\xa0month")
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_thousand_years_ago (utils_tests.test_timesince.TZAwareTimesinceTests.test_thousand_years_ago)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 623, in run
+    self._callTestMethod(testMethod)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 579, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 175, in test_thousand_years_ago
+    self.assertEqual(timesince(t, self.t), "1000\xa0years")
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_depth (utils_tests.test_timesince.TimesinceTests.test_depth) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 205, in test_depth
+    self.assertEqual(timesince(self.t, value, depth=depth), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_depth (utils_tests.test_timesince.TimesinceTests.test_depth) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 205, in test_depth
+    self.assertEqual(timesince(self.t, value, depth=depth), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_depth (utils_tests.test_timesince.TimesinceTests.test_depth) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 205, in test_depth
+    self.assertEqual(timesince(self.t, value, depth=depth), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_depth (utils_tests.test_timesince.TimesinceTests.test_depth) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 205, in test_depth
+    self.assertEqual(timesince(self.t, value, depth=depth), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_depth (utils_tests.test_timesince.TimesinceTests.test_depth) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 205, in test_depth
+    self.assertEqual(timesince(self.t, value, depth=depth), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_depth (utils_tests.test_timesince.TimesinceTests.test_depth) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 205, in test_depth
+    self.assertEqual(timesince(self.t, value, depth=depth), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_depth (utils_tests.test_timesince.TimesinceTests.test_depth) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 205, in test_depth
+    self.assertEqual(timesince(self.t, value, depth=depth), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_depth (utils_tests.test_timesince.TimesinceTests.test_depth) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 205, in test_depth
+    self.assertEqual(timesince(self.t, value, depth=depth), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_depth (utils_tests.test_timesince.TimesinceTests.test_depth) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 205, in test_depth
+    self.assertEqual(timesince(self.t, value, depth=depth), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_months_edge (utils_tests.test_timesince.TimesinceTests.test_months_edge) [<object object at 0x100c326d0>]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 237, in test_months_edge
+    self.assertEqual(timesince(t, value), expected)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_other_units (utils_tests.test_timesince.TimesinceTests.test_other_units)
+Test other units.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 623, in run
+    self._callTestMethod(testMethod)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 579, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 40, in test_other_units
+    self.assertEqual(timesince(self.t, self.t + self.onemonth), "1\xa0month")
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+======================================================================
+ERROR: test_thousand_years_ago (utils_tests.test_timesince.TimesinceTests.test_thousand_years_ago)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 623, in run
+    self._callTestMethod(testMethod)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpc8e16pc8/miniconda3/lib/python3.11/unittest/case.py", line 579, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/tests/utils_tests/test_timesince.py", line 175, in test_thousand_years_ago
+    self.assertEqual(timesince(t, self.t), "1000\xa0years")
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.2/tmpw5dawov4/django__django__4.2/django/utils/timesince.py", line 93, in timesince
+    pivot = datetime.datetime(
+    ^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
+
+----------------------------------------------------------------------
+Ran 34 tests in 2.074s
+
+FAILED (errors=66)
+Destroying test database for alias 'default' ('default_1.sqlite3')...
+Destroying test database for alias 'default' ('default_2.sqlite3')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+>>>>> Some Tests Failed

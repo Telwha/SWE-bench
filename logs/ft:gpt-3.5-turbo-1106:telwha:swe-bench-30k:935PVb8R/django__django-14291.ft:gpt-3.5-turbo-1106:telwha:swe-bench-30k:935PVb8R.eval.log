@@ -1,0 +1,165 @@
+Task Metadata:
+	- Instance ID: django__django-14291
+	- Testbed: /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpftadt5hh/django__django__4.0
+	- Virtual Env.: django__django__4.0
+	- Evaluation Model: ft:gpt-3.5-turbo-1106:telwha:swe-bench-30k:935PVb8R
+>>>>> Applied Patch (pred_try)
+>>>>> Applied Patch (pred_try)
+Installation Command: source /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpz5_xex3z/miniconda3/bin/activate django__django__4.0 && echo 'activate successful' && python -m pip install -e .
+Std. Output: activate successful
+Obtaining file:///Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpftadt5hh/django__django__4.0
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: asgiref>=3.3.2 in /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpz5_xex3z/miniconda3/lib/python3.11/site-packages (from Django==4.0.dev20210421063106) (3.7.2)
+Requirement already satisfied: pytz in /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpz5_xex3z/miniconda3/lib/python3.11/site-packages (from Django==4.0.dev20210421063106) (2024.1)
+Requirement already satisfied: sqlparse>=0.2.2 in /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpz5_xex3z/miniconda3/lib/python3.11/site-packages (from Django==4.0.dev20210421063106) (0.4.4)
+Building wheels for collected packages: Django
+  Building editable for Django (pyproject.toml): started
+  Building editable for Django (pyproject.toml): finished with status 'done'
+  Created wheel for Django: filename=Django-4.0.dev20210421063106-0.editable-py3-none-any.whl size=25969 sha256=004c35bbb1291df1e169cc16c2e6816adfef6f3eef3bda6593342ad256f44530
+  Stored in directory: /private/var/folders/qq/77m5fvhj23759fqt66fmsgpm0000gn/T/pip-ephem-wheel-cache-dk_azs1m/wheels/08/b9/38/c3c00b3e03576c5db5ce2cddc0b966da10194f6068faa13c4f
+Successfully built Django
+Installing collected packages: Django
+  Attempting uninstall: Django
+    Found existing installation: Django 4.0.dev20210427083447
+    Uninstalling Django-4.0.dev20210427083447:
+      Successfully uninstalled Django-4.0.dev20210427083447
+Successfully installed Django-4.0.dev20210421063106
+
+Std. Error: 
+
+>>>>> Init Succeeded
+>>>>> Applied Patch (test)
+>>>>> Applied Patch (pred)
+Test Script: source /Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpz5_xex3z/miniconda3/bin/activate django__django__4.0 && echo 'activate successful' && ./tests/runtests.py --verbosity 2 check_framework.test_caches;
+Output:
+activate successful
+Testing against Django installed in '/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpftadt5hh/django__django__4.0/django'
+Importing application check_framework
+Found 10 tests.
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+test_absolute_path (check_framework.test_caches.CheckCacheAbsolutePath.test_absolute_path) ... ok
+test_relative_path (check_framework.test_caches.CheckCacheAbsolutePath.test_relative_path) ... ok
+test_cache_path_contains_media_static_setting (check_framework.test_caches.CheckCacheLocationTest.test_cache_path_contains_media_static_setting) ... ok
+test_cache_path_inside_media_static_setting (check_framework.test_caches.CheckCacheLocationTest.test_cache_path_inside_media_static_setting) ... ok
+test_cache_path_matches_media_static_setting (check_framework.test_caches.CheckCacheLocationTest.test_cache_path_matches_media_static_setting) ... ok
+test_cache_path_not_conflict (check_framework.test_caches.CheckCacheLocationTest.test_cache_path_not_conflict) ... ok
+test_staticfiles_dirs_prefix (check_framework.test_caches.CheckCacheLocationTest.test_staticfiles_dirs_prefix) ... 
+  test_staticfiles_dirs_prefix (check_framework.test_caches.CheckCacheLocationTest.test_staticfiles_dirs_prefix) (path=PosixPath('/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpftadt5hh/django__django__4.0')) ... ERROR
+  test_staticfiles_dirs_prefix (check_framework.test_caches.CheckCacheLocationTest.test_staticfiles_dirs_prefix) (path=PosixPath('/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpftadt5hh/django__django__4.0')) ... ERROR
+  test_staticfiles_dirs_prefix (check_framework.test_caches.CheckCacheLocationTest.test_staticfiles_dirs_prefix) (path=PosixPath('/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpftadt5hh/django__django__4.0/other')) ... ERROR
+test_staticfiles_dirs_prefix_not_conflict (check_framework.test_caches.CheckCacheLocationTest.test_staticfiles_dirs_prefix_not_conflict) ... ERROR
+test_default_cache_included (check_framework.test_caches.CheckCacheSettingsAppDirsTest.test_default_cache_included)
+Don't error if 'default' is present in CACHES setting. ... ok
+test_default_cache_not_included (check_framework.test_caches.CheckCacheSettingsAppDirsTest.test_default_cache_not_included)
+Error if 'default' not present in CACHES setting. ... ok
+
+======================================================================
+ERROR: test_staticfiles_dirs_prefix (check_framework.test_caches.CheckCacheLocationTest.test_staticfiles_dirs_prefix) (path=PosixPath('/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpftadt5hh/django__django__4.0'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpftadt5hh/django__django__4.0/tests/check_framework/test_caches.py", line 109, in test_staticfiles_dirs_prefix
+    self.assertEqual(check_cache_location_not_exposed(None), [
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpftadt5hh/django__django__4.0/django/core/checks/caches.py", line 30, in check_cache_location_not_exposed
+    paths = {
+            ^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpftadt5hh/django__django__4.0/django/core/checks/caches.py", line 31, in <setcomp>
+    pathlib.Path(staticfiles_dir).resolve()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpz5_xex3z/miniconda3/lib/python3.11/pathlib.py", line 871, in __new__
+    self = cls._from_parts(args)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpz5_xex3z/miniconda3/lib/python3.11/pathlib.py", line 509, in _from_parts
+    drv, root, parts = self._parse_args(args)
+                       ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpz5_xex3z/miniconda3/lib/python3.11/pathlib.py", line 493, in _parse_args
+    a = os.fspath(a)
+        ^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not tuple
+
+======================================================================
+ERROR: test_staticfiles_dirs_prefix (check_framework.test_caches.CheckCacheLocationTest.test_staticfiles_dirs_prefix) (path=PosixPath('/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpftadt5hh/django__django__4.0'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpftadt5hh/django__django__4.0/tests/check_framework/test_caches.py", line 109, in test_staticfiles_dirs_prefix
+    self.assertEqual(check_cache_location_not_exposed(None), [
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpftadt5hh/django__django__4.0/django/core/checks/caches.py", line 30, in check_cache_location_not_exposed
+    paths = {
+            ^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpftadt5hh/django__django__4.0/django/core/checks/caches.py", line 31, in <setcomp>
+    pathlib.Path(staticfiles_dir).resolve()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpz5_xex3z/miniconda3/lib/python3.11/pathlib.py", line 871, in __new__
+    self = cls._from_parts(args)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpz5_xex3z/miniconda3/lib/python3.11/pathlib.py", line 509, in _from_parts
+    drv, root, parts = self._parse_args(args)
+                       ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpz5_xex3z/miniconda3/lib/python3.11/pathlib.py", line 493, in _parse_args
+    a = os.fspath(a)
+        ^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not tuple
+
+======================================================================
+ERROR: test_staticfiles_dirs_prefix (check_framework.test_caches.CheckCacheLocationTest.test_staticfiles_dirs_prefix) (path=PosixPath('/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpftadt5hh/django__django__4.0/other'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpftadt5hh/django__django__4.0/tests/check_framework/test_caches.py", line 109, in test_staticfiles_dirs_prefix
+    self.assertEqual(check_cache_location_not_exposed(None), [
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpftadt5hh/django__django__4.0/django/core/checks/caches.py", line 30, in check_cache_location_not_exposed
+    paths = {
+            ^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpftadt5hh/django__django__4.0/django/core/checks/caches.py", line 31, in <setcomp>
+    pathlib.Path(staticfiles_dir).resolve()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpz5_xex3z/miniconda3/lib/python3.11/pathlib.py", line 871, in __new__
+    self = cls._from_parts(args)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpz5_xex3z/miniconda3/lib/python3.11/pathlib.py", line 509, in _from_parts
+    drv, root, parts = self._parse_args(args)
+                       ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpz5_xex3z/miniconda3/lib/python3.11/pathlib.py", line 493, in _parse_args
+    a = os.fspath(a)
+        ^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not tuple
+
+======================================================================
+ERROR: test_staticfiles_dirs_prefix_not_conflict (check_framework.test_caches.CheckCacheLocationTest.test_staticfiles_dirs_prefix_not_conflict)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpftadt5hh/django__django__4.0/tests/check_framework/test_caches.py", line 121, in test_staticfiles_dirs_prefix_not_conflict
+    self.assertEqual(check_cache_location_not_exposed(None), [])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpftadt5hh/django__django__4.0/django/core/checks/caches.py", line 30, in check_cache_location_not_exposed
+    paths = {
+            ^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpftadt5hh/django__django__4.0/django/core/checks/caches.py", line 31, in <setcomp>
+    pathlib.Path(staticfiles_dir).resolve()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpz5_xex3z/miniconda3/lib/python3.11/pathlib.py", line 871, in __new__
+    self = cls._from_parts(args)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpz5_xex3z/miniconda3/lib/python3.11/pathlib.py", line 509, in _from_parts
+    drv, root, parts = self._parse_args(args)
+                       ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhinav/Documents/SWE-bench/testbed/c66a181850/django__django/4.0/tmpz5_xex3z/miniconda3/lib/python3.11/pathlib.py", line 493, in _parse_args
+    a = os.fspath(a)
+        ^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not tuple
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.008s
+
+FAILED (errors=4)
+
+>>>>> Some Tests Failed
