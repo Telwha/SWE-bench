@@ -1,4 +1,5 @@
 import glob, json, os
+from argparse import ArgumentParser
 
 from collections import Counter
 from getters import (
@@ -321,3 +322,27 @@ def get_model_report(
             report_map[repo]["resolved"].append(p['instance_id'])
 
     return report_map
+
+if __name__ == "__main__":
+    parser = ArgumentParser()
+        
+    parser.add_argument(
+        "--predicts_path",
+        type=str,
+        required=True,
+        help="predicts_path",
+    )
+    parser.add_argument(
+        "--eval_dir",
+        type=str,
+        required=True,
+        help="eval_dir",
+    )
+    parser.add_argument(
+        "--swe_bench_tasks",
+        type=str,
+        required=True,
+        help="eval_dir",
+    )
+    args = parser.parse_args()
+    get_model_eval_summary(**vars(args))
